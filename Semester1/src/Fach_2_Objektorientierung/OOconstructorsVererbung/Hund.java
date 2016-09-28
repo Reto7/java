@@ -15,4 +15,6 @@ class Hund extends Fuchs {
     Maus m = new Maus(); //Maus
     Ratte r = new Ratte(); //Maus,Ratte
 
+
+    //git test
 }
