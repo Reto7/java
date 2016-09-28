@@ -1,8 +1,10 @@
 #Manuell URKA
 **/*.zip
+**/*.iml
 .idea/*.iml
 .idea/*workspace*
 .idea/compiler.xml
+.idea/deployment.xml
 .idea/copyright/profiles_settings.xml
 .idea/misc.xml
 .idea/modules.xml
@@ -11,6 +13,7 @@
 **/.idea/*.iml
 **/.idea/*workspace*
 **/.idea/compiler.xml
+**/.idea/deployment.xml
 **/.idea/copyright/profiles_settings.xml
 **/.idea/misc.xml
 **/.idea/modules.xml
