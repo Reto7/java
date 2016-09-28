@@ -1,4 +1,4 @@
-package test;
+package Fach_99_Test;
 
 /**
  * Created by rk on 28.09.16.
