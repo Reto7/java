@@ -12,6 +12,10 @@ public class Xfahrzeug {
         protected-Eigenschaften werden an alle Unterklassen vererbt.
         Klassen, die sich im gleichen Paket befinden, können alle protected-Eigenschaften sehen,
         denn protected ist eine Erweiterung der Paketsichtbarkeit.
+
+        --> Auf PROTECTED Elemente kann nur von Klassen aus zugegriffen werden,
+            welche sich im gleichen Paket befinden
+            oder welche eine Kindklasse einer solchen Klasse sind.
          */
 
 }
