@@ -5,6 +5,15 @@ package Fach_2_Objektorientierung.OOconstructorsVererbung;
  */
 public class TestRahmen {
     public static void main(String[] args) {
+
+        /*
+        super() muss immer die erste Anweisung im Konstruktor sein.
+        Beim Aufbau neuer Objekte läuft die Laufzeitumgebung daher als Erstes die
+        Hierarchie nach java.lang.Object ab und beginnt dort von oben nach unten
+        mit der Initialisierung. Kommt der eigene Konstruktor an die Reihe, konnten
+        die Konstruktoren der Oberklasse ihre Werte schon initialisieren.
+        */
+
         System.out.println("------------START------------");
         new Hund();
         //Ausgabe:
