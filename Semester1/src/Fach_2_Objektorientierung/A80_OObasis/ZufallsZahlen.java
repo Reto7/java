@@ -1,4 +1,4 @@
-package Fach_2_Objektorientierung.OObasis;
+package Fach_2_Objektorientierung.A80_OObasis;
 
 import java.util.Random;
 

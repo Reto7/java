@@ -4,6 +4,7 @@
 .idea/*.iml
 .idea/*workspace*
 .idea/compiler.xml
+.idea/uiDesigner.xml
 .idea/deployment.xml
 .idea/copyright/profiles_settings.xml
 .idea/misc.xml
@@ -13,6 +14,7 @@
 **/.idea/*.iml
 **/.idea/*workspace*
 **/.idea/compiler.xml
+**/.idea/uiDesigner.xml
 **/.idea/deployment.xml
 **/.idea/copyright/profiles_settings.xml
 **/.idea/misc.xml

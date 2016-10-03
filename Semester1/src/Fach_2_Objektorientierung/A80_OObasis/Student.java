@@ -1,4 +1,4 @@
-package Fach_2_Objektorientierung.OObasis;/*
+package Fach_2_Objektorientierung.A80_OObasis;/*
  * "Grundkurs Programmieren in Java - (6. Auflage, 2011)"
  * 2001-2011, Carl Hanser Verlag
  * Loesungsvorschlag zu Aufgabe 8.1 (Version 3.0)

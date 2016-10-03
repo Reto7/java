@@ -1,17 +1,12 @@
-package Fach_2_Objektorientierung.OObasis;
+package Fach_2_Objektorientierung.A80_OObasis;
 
 /**
  * Created by user on 01.10.2016.
  */
-public class Xtestrahmen {
-    public static void main(String[] args) {
-        Xauto vw = new Xauto();
-        // eigene auto var.
-        vw.autoVariableProtected = "X";
-        vw.autoVariablePublic = "X";
-        // hat auto vom fahrzeug vererbt bekommen.
-        vw.fahrzeugVariableProtected = "von vererbung bekommen";
-        vw.fahrzeugVariablePublic = "von vererbung bekommen";
+public class Xauto extends Xfahrzeug {
+    private String autoVariablePrivat = "Hallo";
+    protected String  autoVariableProtected = "Hallo";
+    public String  autoVariablePublic = "Hallo";
 
 
         /*
@@ -23,7 +18,4 @@ public class Xtestrahmen {
             welche sich im gleichen Paket befinden
             oder welche eine Kindklasse einer solchen Klasse sind.
          */
-
-
-    }
 }

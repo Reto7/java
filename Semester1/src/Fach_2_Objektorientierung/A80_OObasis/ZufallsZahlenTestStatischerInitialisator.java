@@ -1,4 +1,4 @@
-package Fach_2_Objektorientierung.OObasis;
+package Fach_2_Objektorientierung.A80_OObasis;
 
 /**
  * Created by user on 01.10.2016.
