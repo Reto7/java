@@ -5,13 +5,17 @@ package Fach_2_Objektorientierung.A9;
  */
 
 public class Franc extends Euro {
+    /**
+     * Ein Euro ist soviel Franc wert (definitiv fixiert, aendert nie mehr)
+     */
+    private static final double KURS = 6.55957;
 
     /**
      * Konstruktor EINGABE FRANC, gleich in Euro gehen
      */
     public Franc(double x) {
 
-        super(x / kurs);  //Wert des Geldbetrags in Euro
+        super(x / KURS);  //Wert des Geldbetrags in Euro
     }
 
     /**
@@ -22,12 +26,9 @@ public class Franc extends Euro {
         super(e.euroBetrag());  //Wert des Geldbetrags in Euro
     }
 
-    /**
-     * Ein Euro ist soviel Franc wert
-     */
-    private static double kurs = 6.55957;
+
 
     public double waehrungsBetrag() {
-        return super.euroBetrag() * kurs;
+        return super.euroBetrag() * KURS;
     }
 }

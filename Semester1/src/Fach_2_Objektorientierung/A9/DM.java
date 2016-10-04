@@ -5,12 +5,16 @@ package Fach_2_Objektorientierung.A9;
  */
 
 public class DM extends Euro {
+    /**
+     * Ein Euro ist soviel DM wert (definitiv fixiert, aendert nie mehr)
+     */
+    private static final double KURS = 1.95583;
 
     /**
      * Konstruktor EINGABE DM, gleich in Euro gehen
      */
     public DM(double x) {
-        super(x / kurs);  //Wert des Geldbetrags in Euro
+        super(x / KURS);  //Wert des Geldbetrags in Euro
     }
 
     /**
@@ -20,12 +24,7 @@ public class DM extends Euro {
         super(e.euroBetrag());  //Wert des Geldbetrags in Euro
     }
 
-    /**
-     * Ein Euro ist soviel DM wert
-     */
-    private static double kurs = 1.95583;
-
     public double waehrungsBetrag() {
-        return super.euroBetrag() * kurs;
+        return super.euroBetrag() * KURS;
     }
 }

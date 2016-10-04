@@ -1,11 +1,15 @@
 package Fach_2_Objektorientierung.A9;
 
+import Prog1Tools.IOTools;
+
 /**
  * Created by rk on 04.10.16.
  */
 public class Waehrungskalkulator {
     public static void main(String[] args) {
-        DM dm = new DM(13.20);
+        double dmBetrag = IOTools.readDouble("DM Betrag > ");
+
+        DM dm = new DM(dmBetrag);
         System.out.println(" DM in DM: " + dm.waehrungsBetrag());
         System.out.println(" DM in EURO: " + dm.euroBetrag());
 

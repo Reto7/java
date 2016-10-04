@@ -5,12 +5,16 @@ package Fach_2_Objektorientierung.A9;
  */
 
 public class Lire extends Euro {
+    /**
+     * Ein Euro ist soviel Lire wert (definitiv fixiert, aendert nie mehr)
+     */
+    private static final double KURS = 1936.27;
 
     /**
      * Konstruktor EINGABE LIRE, , gleich in Euro gehen
      */
     public Lire(double x) {
-        super(x / kurs);  //Wert des Geldbetrags in Euro
+        super(x / KURS);  //Wert des Geldbetrags in Euro
     }
 
     /**
@@ -20,12 +24,7 @@ public class Lire extends Euro {
         super(e.euroBetrag());  //Wert des Geldbetrags in Euro
     }
 
-    /**
-     * Ein Euro ist soviel Lire wert
-     */
-    private static double kurs = 1936.27;
-
     public double waehrungsBetrag() {
-        return super.euroBetrag() * kurs;
+        return super.euroBetrag() * KURS;
     }
 }
