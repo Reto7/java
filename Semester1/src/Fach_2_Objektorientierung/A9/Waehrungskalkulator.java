@@ -17,7 +17,7 @@ public class Waehrungskalkulator {
         System.out.println(" DM in Lire: " + l.waehrungsBetrag());
         System.out.println("(Lire in EURO: " + l.euroBetrag() + ")");
 
-      //Franc f = new Franc(new Euro(dm.euroBetrag()));
+        //Franc f = new Franc(new Euro(dm.euroBetrag()));
         Franc f = new Franc(dm);
         System.out.println(" DM in Franc: " + f.waehrungsBetrag());
         System.out.println("(Franc in EURO: " + f.euroBetrag() + ")");
