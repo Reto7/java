@@ -1,6 +1,4 @@
-package Fach_2_Objektorientierung.A91;
-
-import Prog1Tools.IOTools;
+package Fach_2_Objektorientierung.A90_Vererbung;
 
 /**
  * Created by rk on 04.10.16.

@@ -1,4 +1,4 @@
-package Fach_2_Objektorientierung.A91;
+package Fach_2_Objektorientierung.A90_Vererbung;
 
 /**
  * Created by rk on 08.10.16.
