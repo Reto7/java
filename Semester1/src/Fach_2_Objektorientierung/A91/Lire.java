@@ -1,26 +1,26 @@
-package Fach_2_Objektorientierung.A9;
+package Fach_2_Objektorientierung.A91;
 
 /**
  * Created by rk on 04.10.16.
  */
 
-public class DM extends Euro {
+public class Lire extends Euro {
     /**
-     * Ein Euro ist soviel DM wert (definitiv fixiert, aendert nie mehr)
+     * Ein Euro ist soviel Lire wert (definitiv fixiert, aendert nie mehr)
      */
-    private static final double KURS = 1.95583;
+    private static final double KURS = 1936.27;
 
     /**
-     * Konstruktor EINGABE DM, gleich in Euro gehen
+     * Konstruktor EINGABE LIRE, , gleich in Euro gehen
      */
-    public DM(double x) {
+    public Lire(double x) {
         super(x / KURS);  //Wert des Geldbetrags in Euro
     }
 
     /**
      * Konstruktor, kann hierbei EURO, DM, LIRE empfangen (den DM ist ja auch EURO)
      */
-    public DM(Euro e) {
+    public Lire(Euro e) {
         super(e.euroBetrag());  //Wert des Geldbetrags in Euro
     }
 

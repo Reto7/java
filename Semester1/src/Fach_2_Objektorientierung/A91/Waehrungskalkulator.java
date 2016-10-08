@@ -1,4 +1,4 @@
-package Fach_2_Objektorientierung.A9;
+package Fach_2_Objektorientierung.A91;
 
 import Prog1Tools.IOTools;
 
@@ -7,7 +7,8 @@ import Prog1Tools.IOTools;
  */
 public class Waehrungskalkulator {
     public static void main(String[] args) {
-        double dmBetrag = IOTools.readDouble("DM Betrag > ");
+        //double dmBetrag = IOTools.readDouble("DM Betrag > ");
+        double dmBetrag =12;
 
         DM dm = new DM(dmBetrag);
         System.out.println(" DM in DM: " + dm.waehrungsBetrag());
@@ -21,6 +22,11 @@ public class Waehrungskalkulator {
         Franc f = new Franc(dm);
         System.out.println(" DM in Franc: " + f.waehrungsBetrag());
         System.out.println("(Franc in EURO: " + f.euroBetrag() + ")");
+
+        // Aufgabe 9.3
+        System.out.println(l);
+
+
     }
 
 }

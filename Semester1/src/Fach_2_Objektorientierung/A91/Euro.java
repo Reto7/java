@@ -1,4 +1,4 @@
-package Fach_2_Objektorientierung.A9;
+package Fach_2_Objektorientierung.A91;
 
 /**
  * Created by rk on 04.10.16.
@@ -30,6 +30,13 @@ public class Euro extends Waehrung {
     /** Zugriff auf die private Klassenvariable */
     public static void setEuroKurs(double Kurs) {
         kurs=Kurs;
+    }
+
+
+    // Aufgabe 9.3
+    @Override
+    public String toString(){
+        return "Wert in Euro: " +euroBetrag();
     }
 
 }
