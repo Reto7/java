@@ -9,9 +9,10 @@ public class TestTiere {
     Hund h = new Hund();
     Katze k = new Katze();
 
+    /*
     Tier[] tierListe = new Tier[2];
     tierListe[0] = h;
     tierListe[1] = k;
-
+*/
 
 }
