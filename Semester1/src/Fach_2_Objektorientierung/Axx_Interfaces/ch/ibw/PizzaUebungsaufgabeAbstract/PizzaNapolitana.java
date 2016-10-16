@@ -1,4 +1,6 @@
-package Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeInterface;
+package Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeAbstract;
+
+import Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeInterface.PizzaInterface;
 
 /**
  * Pizza Napolitana hat zusaetzliche Zutataen
@@ -7,14 +9,9 @@ package Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeInter
  *  Siehe Testklassen
  *
  */
-public class PizzaNapolitana implements PizzaInterface {
+public class PizzaNapolitana extends PizzaAbstract {
 
     private String[] zutaten = {"Teig", "Kaese", "Tomatensauce", "Salami"};
-
-    @Override
-    public String[] getZutaten() {
-        return zutaten;
-    }
 
     @Override
     public double getPreis() {

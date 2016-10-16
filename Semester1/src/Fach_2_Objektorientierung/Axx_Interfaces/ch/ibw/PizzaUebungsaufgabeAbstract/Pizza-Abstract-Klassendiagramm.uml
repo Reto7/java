@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeAbstract.PizzaAbstract</OriginalElement>
+  <nodes>
+    <node x="0.0" y="80.0">Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeAbstract.PizzaNapolitana</node>
+    <node x="76.0" y="0.0">Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeAbstract.PizzaAbstract</node>
+    <node x="138.0" y="80.0">Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeAbstract.PizzaMargherita</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeAbstract.PizzaNapolitana" target="Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeAbstract.PizzaAbstract">
+      <point x="0.0" y="-15.0" />
+      <point x="59.0" y="55.0" />
+      <point x="102.0" y="55.0" />
+      <point x="-26.0" y="15.0" />
+    </edge>
+    <edge source="Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeAbstract.PizzaMargherita" target="Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeAbstract.PizzaAbstract">
+      <point x="0.0" y="-15.0" />
+      <point x="197.0" y="55.0" />
+      <point x="154.0" y="55.0" />
+      <point x="26.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="52.0" y="15.0" />
+  <SelectedNodes>
+    <node>Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.PizzaUebungsaufgabeAbstract.PizzaAbstract</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
