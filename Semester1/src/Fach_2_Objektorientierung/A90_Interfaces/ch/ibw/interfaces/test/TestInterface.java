@@ -1,12 +1,9 @@
 package Fach_2_Objektorientierung.A90_Interfaces.ch.ibw.interfaces.test;
 
-
 import Fach_2_Objektorientierung.A90_Interfaces.ch.ibw.interfaces.InterfaceBase;
-import Fach_2_Objektorientierung.Axx_Interfaces.ch.ibw.interfaces.test.*;
-
 
 /**
- *
+ * Created by rk on 11.10.16.
  */
 public class TestInterface {
 
@@ -34,6 +31,7 @@ public class TestInterface {
         InterfaceBase[] kinder = new InterfaceBase[2];
         kinder[0] = k1;
 
+
         if (kinder[1] != null) {
             kinder[1].print();
         }
@@ -41,7 +39,7 @@ public class TestInterface {
         kinder[1] = k2;
 
 
-        // da "main" sowieso bereits static ist, kann diese hier auch static sein, so müssen wir nicht instanzieren
+        // da main sowieso bereits static ist, kann diese hier auch static sein, so müssen wir nicht instanzieren
         printAlleKinder(kinder);
         printKind(k1);
 
@@ -55,7 +53,6 @@ public class TestInterface {
                     public void print() {
                         System.out.println("Hallo Anonyme-Klasse");
                     }
-
                 }
         );
 
