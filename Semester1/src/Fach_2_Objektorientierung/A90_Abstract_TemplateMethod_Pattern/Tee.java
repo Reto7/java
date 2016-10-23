@@ -14,4 +14,10 @@ public class Tee extends KoffeinhaltigesGetraenk {
         System.out.println("fuege Zitrone hinzu (Zutaten)");
     }
 
+    // Ueberschreiben Hook Methode, also nicht die "default" Implementierung verwenden
+    @Override
+    public boolean kundeWillZutaten() {
+        return false;
+    }
+
 }

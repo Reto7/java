@@ -15,14 +15,22 @@ public abstract class KoffeinhaltigesGetraenk {
         kocheWasser();
         aufgiessen();
         inTasseSchuetten();
-        zutatenHinzufuegen();
+        if (kundeWillZutaten()) {
+            zutatenHinzufuegen();
+        }
     }
 
-    // Abstracte Methoden, muessen von jeder Subklasse selbst implementiert werden
+    // Abstracte Methoden, MUSS von jeder Subklasse selbst implementiert werden
     // diese koennen nicht hier zentral implementiert werden da sie je nach Subklasse
     // anders implementiert werden muessen
     public abstract void aufgiessen();
     public abstract void zutatenHinzufuegen();
+
+    // Hook Methode, die Subklasse KANN diese ueberschreiben, also sich sozusagen "einklinken"
+    // dies hier stellt die "default" Implementierung dar
+    public boolean kundeWillZutaten() {
+        return true;
+    }
 
     // Gemeinsame Nutzung aus dieser Superklasse
     void inTasseSchuetten() {
