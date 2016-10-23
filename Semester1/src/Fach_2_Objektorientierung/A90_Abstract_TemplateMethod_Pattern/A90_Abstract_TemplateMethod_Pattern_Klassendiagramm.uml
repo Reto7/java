@@ -3,30 +3,29 @@
   <ID>JAVA</ID>
   <OriginalElement>Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern</OriginalElement>
   <nodes>
-    <node x="-17.0" y="53.0">Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.Tee</node>
-    <node x="-163.0" y="-137.0">Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.KoffeinhaltigesGetraenk</node>
-    <node x="-202.0" y="53.0">Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.Kaffee</node>
+    <node x="185.0" y="190.0">Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.Tee</node>
+    <node x="39.0" y="0.0">Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.KoffeinhaltigesGetraenk</node>
+    <node x="-151.0" y="324.0">Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.KoffeinhaltigesGetraenkTest</node>
+    <node x="0.0" y="190.0">Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.Kaffee</node>
   </nodes>
   <notes />
   <edges>
     <edge source="Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.Kaffee" target="Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.KoffeinhaltigesGetraenk">
       <point x="0.0" y="-37.0" />
-      <point x="-119.5" y="28.0" />
-      <point x="-95.0" y="28.0" />
+      <point x="82.5" y="165.0" />
+      <point x="107.0" y="165.0" />
       <point x="-68.0" y="70.0" />
     </edge>
     <edge source="Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.Tee" target="Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.KoffeinhaltigesGetraenk">
       <point x="0.0" y="-37.0" />
-      <point x="65.5" y="28.0" />
-      <point x="41.0" y="28.0" />
+      <point x="267.5" y="165.0" />
+      <point x="243.0" y="165.0" />
       <point x="68.0" y="70.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="80.0" y="55.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="91.0" y="152.5" />
   <SelectedNodes>
-    <node>Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.Tee</node>
-    <node>Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.KoffeinhaltigesGetraenk</node>
-    <node>Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.Kaffee</node>
+    <node>Fach_2_Objektorientierung.A90_Abstract_TemplateMethod_Pattern.KoffeinhaltigesGetraenkTest</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
