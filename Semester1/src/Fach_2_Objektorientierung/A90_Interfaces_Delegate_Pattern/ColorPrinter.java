@@ -1,6 +1,4 @@
-package Fach_2_Objektorientierung.A90_Interfaces_Delegate;
-
-import org.junit.Test;
+package Fach_2_Objektorientierung.A90_Interfaces_Delegate_Pattern;
 
 /**
  * http://www.programmierenlernenhq.de/einfuehrung-in-java-design-patterns-software-entwurfsmuster/
@@ -10,16 +8,10 @@ import org.junit.Test;
  * Es muss weder Printer noch Printable angepasst werden
  * -----------------------------------------------------------------------------
  */
-public class DelegateTest
+public class ColorPrinter implements Printable // Delegate
 {
-    @Test
-    public void printerTest()
+    public void print()
     {
-        // ein BlackWhitePrinter
-        Printer myPrinter = new Printer();
-        myPrinter.print();
-        // ein ColorPrinter
-        myPrinter.switchTo(new ColorPrinter());
-        myPrinter.print();
+        System.out.println("ColorPrinter prints!");
     }
 }
