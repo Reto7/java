@@ -1,4 +1,4 @@
-package Fach_2_Objektorientierung.A90_JavaInsel_Interfaces;
+package Fach_2_Objektorientierung.A90_Interfaces_JavaInsel;
 
 /**
  * http://openbook.rheinwerk-verlag.de/javainsel/javainsel_05_013.html#dodtp4cdf05f9-ab55-4791-9fa2-c6929cc1a19d
@@ -14,7 +14,7 @@ package Fach_2_Objektorientierung.A90_JavaInsel_Interfaces;
  * der grafischen Oberflächen, Attributes2, EntityResolver2, Locator2 für XML-Verarbeitung
  * sind weitere.
  *
- * TEST KLASSE siehe H:\DATEN\Intellij-Workspace\Semester1\test\Fach_2_Objektorientierung\A90_JavaInsel_Interfaces\BuyableTest.java
+ * TEST KLASSE siehe H:\DATEN\Intellij-Workspace\Semester1\test\Fach_2_Objektorientierung\A90_Interfaces_JavaInsel\BuyableTest.java
  */
 public interface Buyable
 {

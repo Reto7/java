@@ -1,4 +1,4 @@
-package Fach_2_Objektorientierung.A90_JavaInsel_Interfaces;
+package Fach_2_Objektorientierung.A90_Interfaces_JavaInsel;
 
 public class Magazine extends GameObject implements Buyable2
 {

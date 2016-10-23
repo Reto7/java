@@ -1,4 +1,4 @@
-package Fach_2_Objektorientierung.A90_JavaInsel_Interfaces;
+package Fach_2_Objektorientierung.A90_Interfaces_JavaInsel;
 
 /*
 aus http://openbook.rheinwerk-verlag.de/javainsel/javainsel_05_012.html#dodtpd2ed3e4a-d795-4c52-9357-cb640e8f256f
