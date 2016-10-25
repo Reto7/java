@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Fach_2_Objektorientierung.A10_Exceptions.ch.ibw.exceptions</OriginalElement>
+  <nodes>
+    <node x="-170.0" y="217.0">Fach_2_Objektorientierung.A10_Exceptions.ch.ibw.exceptions.PingPong2</node>
+    <node x="132.0" y="81.0">Fach_2_Objektorientierung.A10_Exceptions.ch.ibw.exceptions.PongException</node>
+    <node x="-171.0" y="176.0">Fach_2_Objektorientierung.A10_Exceptions.ch.ibw.exceptions.PingPong</node>
+    <node x="53.0" y="0.0">Fach_2_Objektorientierung.A10_Exceptions.ch.ibw.exceptions.PingPongException</node>
+    <node x="0.0" y="81.0">Fach_2_Objektorientierung.A10_Exceptions.ch.ibw.exceptions.PingException</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Fach_2_Objektorientierung.A10_Exceptions.ch.ibw.exceptions.PingException" target="Fach_2_Objektorientierung.A10_Exceptions.ch.ibw.exceptions.PingPongException">
+      <point x="0.0" y="-15.5" />
+      <point x="56.0" y="56.0" />
+      <point x="88.0" y="56.0" />
+      <point x="-35.0" y="15.5" />
+    </edge>
+    <edge source="Fach_2_Objektorientierung.A10_Exceptions.ch.ibw.exceptions.PongException" target="Fach_2_Objektorientierung.A10_Exceptions.ch.ibw.exceptions.PingPongException">
+      <point x="0.0" y="-15.5" />
+      <point x="190.0" y="56.0" />
+      <point x="158.0" y="56.0" />
+      <point x="35.0" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="162.5" y="132.0" />
+  <SelectedNodes>
+    <node>Fach_2_Objektorientierung.A10_Exceptions.ch.ibw.exceptions.PingPong</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
