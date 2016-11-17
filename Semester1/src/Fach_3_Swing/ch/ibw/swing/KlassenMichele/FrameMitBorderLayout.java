@@ -1,4 +1,4 @@
-package ch.ibw.swing;
+package Fach_3_Swing.ch.ibw.swing.KlassenMichele;
 
 import javax.swing.*;
 import java.awt.*;
