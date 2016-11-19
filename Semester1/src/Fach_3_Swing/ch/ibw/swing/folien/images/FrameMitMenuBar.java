@@ -1,4 +1,4 @@
-package Fach_3_Swing.ch.ibw.swing.folien;
+package ch.ibw.swing.folien;
 
 import javax.swing.*;
 import java.awt.*;
