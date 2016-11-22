@@ -1,4 +1,4 @@
-package ch.ibw.swing.folien;
+package Fach_3_Swing.ch.ibw.swing.folien;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;

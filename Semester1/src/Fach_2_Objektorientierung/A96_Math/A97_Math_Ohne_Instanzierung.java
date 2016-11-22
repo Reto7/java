@@ -7,7 +7,6 @@ public class A97_Math_Ohne_Instanzierung {
     public static void main(String[] args) {
         System.out.println(java.lang.Math.max(5,10));
 
-
         //Math m = new Math();
         // Keine instanzierung, weil CONSTRUCTOR PRIVATE !
 
