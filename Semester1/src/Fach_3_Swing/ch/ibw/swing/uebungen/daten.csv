@@ -1,5 +1,5 @@
-NAME;VORNAME;ALTER
-Müller;Hans;88
-Kaufmann;Friz;12
-Kaufmann;Franz;25
-Musterkunde;Andrea;23
+NAME;VORNAME;ALTER;BERUF
+Müller;Hans;88;Bauer
+Kaufmann;Friz;12;Bäcker
+Kaufmann;Franz;25;Bankdirektor
+Musterkunde;Andrea;23;Software-Testerin

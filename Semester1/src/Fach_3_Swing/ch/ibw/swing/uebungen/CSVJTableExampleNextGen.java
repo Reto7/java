@@ -14,14 +14,17 @@ import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 
-public class CSVJTableExample extends JFrame {
+public class CSVJTableExampleNextGen extends JFrame {
 
     private JTable table;
     private JButton btnAction;
+    private Label labelFileAnzeige;
+    private File f;
 
-    public CSVJTableExample()
+    public CSVJTableExampleNextGen()
     {
         super("CSVJTableExample");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -31,19 +34,32 @@ public class CSVJTableExample extends JFrame {
             @Override
             public void actionPerformed(final ActionEvent e)
             {
-                TableModel model = parseCSVAndCreateTableModel(
-                        //new File ("/home/rk/IntelliJ-Workspace/Semester1/src/Fach_3_Swing/ch/ibw/swing/uebungen/daten.csv")
-                        getFile()
-                );
+              //f = new File ("/home/rk/IntelliJ-Workspace/Semester1/src/Fach_3_Swing/ch/ibw/swing/uebungen/daten.csv");
+                f = getFile();
+                TableModel model = parseCSVAndCreateTableModel(f);
                 table.setModel(model);
 
+                TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(table.getModel());
+                table.setRowSorter(sorter);
 
+                labelFileAnzeige.setText("  " +f.getName() + " wurde geladen");
+                labelFileAnzeige.setVisible(true);
             }
         });
 
+
         table = new JTable();
+        table.setBackground(new Color(154,184,164));
         add(new JScrollPane(table), BorderLayout.CENTER);
-        add(btnAction, BorderLayout.SOUTH);
+
+        JPanel jp = new JPanel();
+        jp.setLayout(new GridLayout(1,2));
+        add(jp,BorderLayout.SOUTH);
+        jp.add(btnAction);
+
+        labelFileAnzeige = new Label();
+        jp.add(labelFileAnzeige);
+        labelFileAnzeige.setVisible(false);
 
         pack();
         setVisible(true);
@@ -56,7 +72,9 @@ public class CSVJTableExample extends JFrame {
         FileFilter filter = new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                return pathname.getName().toLowerCase().endsWith("csv");
+                // entweder nur CSV Files oder Verzeichnisse (zeigt beides an)
+                return pathname.getName().toLowerCase().endsWith("csv")
+                        || pathname.isDirectory();
             }
             @Override
             public String getDescription() {
@@ -77,7 +95,7 @@ public class CSVJTableExample extends JFrame {
 
     public static void main(final String[] args)
     {
-        new CSVJTableExample();
+        new CSVJTableExampleNextGen();
     }
 
     // ..................................................File kennt nur die Informationen der Datei, kann weder oeffnen, noch lesen!
