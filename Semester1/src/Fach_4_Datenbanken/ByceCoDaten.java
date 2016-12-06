@@ -87,6 +87,8 @@ public class ByceCoDaten {
         }
 
 
+
+
         // alles wieder sauber schliessen
         statement.close();
         connection.close();

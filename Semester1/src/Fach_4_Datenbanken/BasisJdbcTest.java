@@ -61,8 +61,8 @@ public class BasisJdbcTest {
 
         // STATEMENT
         // wie ein Cursor mit Zeiger. Steht Anfangs immer auf 1. Zeile. Falls next() false liefert, ist Zeiger am Schluss angekommen.
-        int x = statement.executeUpdate("DELETE FROM laender where land_kuerzel = 'DE'");
-        System.out.println("Deleted: " +x);
+        int deletedRows = statement.executeUpdate("DELETE FROM laender where land_kuerzel = 'DE'");
+        System.out.println("Deleted: " +deletedRows);
 
 
         // alles wieder sauber schliessen
