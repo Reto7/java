@@ -23,24 +23,50 @@ public class Main {
         // Insert-Anweisung ausführen
         statement.executeUpdate(" INSERT INTO laender (land_kuerzel, land_name) VALUES('DE','Deutschland')");
         statement.executeUpdate(" INSERT INTO laender (land_kuerzel, land_name) VALUES('CH','Schweiz')");
-        // Select ausführen
-        ResultSet resultset = statement.executeQuery("SELECT land_name FROM laender where land_kuerzel = 'CH' ");
-        // Resultat!
+
+        ResultSet resultset;
+
+        // STATEMENT
         // wie ein Cursor mit Zeiger. Steht Anfangs immer auf 1. Zeile. Falls next() false liefert, ist Zeiger am Schluss angekommen.
+        resultset = statement.executeQuery("SELECT land_name FROM laender where land_kuerzel = 'CH' ");
         while (resultset.next()){
-            System.out.println("Row: " +resultset.getString("land_name"));
+            System.out.println("Row selektiert: " +resultset.getString("land_name"));
         }
-        System.out.println("----------------------------------------");
-        // Select ausführen
-        resultset = statement.executeQuery("SELECT count(*) as anzahl FROM laender");
-        // Resultat!
-        // wie ein Cursor mit Zeiger. Steht Anfangs immer auf 1. Zeile. Falls next() false liefert, ist Zeiger am Schluss angekommen.
-        while (resultset.next()){
-            System.out.println("Anzahl: " +resultset.getString("anzahl"));
-        }
-        System.out.println("----------------------------------------");
-        // alles wieder sauber schliessen
         resultset.close();
+        System.out.println("----------------------------------------");
+
+        // STATEMENT
+        // wie ein Cursor mit Zeiger. Steht Anfangs immer auf 1. Zeile. Falls next() false liefert, ist Zeiger am Schluss angekommen.
+        resultset = statement.executeQuery("SELECT count(*) as anzahl FROM laender");
+        while (resultset.next()){
+            System.out.println("Anzahl Laender: " +resultset.getString("anzahl"));
+        }
+        resultset.close();
+        System.out.println("----------------------------------------");
+
+
+        // PREPARED STATEMENT
+        // wie ein Cursor mit Zeiger. Steht Anfangs immer auf 1. Zeile. Falls next() false liefert, ist Zeiger am Schluss angekommen.
+        String landInput = "CH";
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT land_name FROM laender where land_kuerzel = ? ");
+        // Erstes Fragezeichen durch CH ersetzten!
+        preparedStatement.setString(1, landInput);
+        resultset = preparedStatement.executeQuery();
+        while (resultset.next()){
+            System.out.println("Row selektiert: " +resultset.getString("land_name"));
+        }
+        resultset.close();
+        System.out.println("----------------------------------------");
+
+
+
+        // STATEMENT
+        // wie ein Cursor mit Zeiger. Steht Anfangs immer auf 1. Zeile. Falls next() false liefert, ist Zeiger am Schluss angekommen.
+        int x = statement.executeUpdate("DELETE FROM laender where land_kuerzel = 'DE'");
+        System.out.println("Deleted: " +x);
+
+
+        // alles wieder sauber schliessen
         statement.close();
         connection.close();
 
