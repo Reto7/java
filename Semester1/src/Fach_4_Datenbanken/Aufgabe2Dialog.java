@@ -35,6 +35,7 @@ public class Aufgabe2Dialog extends JDialog {
         super((JDialog) null, "QueryTool");
         contents = new JPanel();
         contents.setLayout(new BorderLayout());
+        contents.setPreferredSize(new Dimension(700,400));
 
         topPanel = new JPanel();
         GridBagLayout topPanelLayout = new GridBagLayout();

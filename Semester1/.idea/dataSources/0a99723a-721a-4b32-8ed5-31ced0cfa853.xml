@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - byceco@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
+    <database id="1" name="byceco">
+      <object-id>16630</object-id>
+      <visible>1</visible>
+    </database>
+    <database id="2" name="postgres">
+      <object-id>12413</object-id>
+    </database>
+    <database id="3" name="mydb">
+      <object-id>16384</object-id>
+    </database>
+    <database id="4" name="retoDB">
+      <object-id>16402</object-id>
+    </database>
+    <database id="5" name="reto">
+      <object-id>16515</object-id>
+    </database>
+    <schema id="6" parent="1" name="public">
+      <object-id>2200</object-id>
+      <visible>1</visible>
+      <introspection-state-number>793</introspection-state-number>
+      <introspection-timestamp>2016-12-06.19:35:41.481</introspection-timestamp>
+    </schema>
+    <schema id="7" parent="1" name="pg_catalog">
+      <object-id>11</object-id>
+    </schema>
+    <schema id="8" parent="1" name="pg_toast">
+      <object-id>99</object-id>
+    </schema>
+    <schema id="9" parent="1" name="pg_temp_1">
+      <object-id>11816</object-id>
+    </schema>
+    <schema id="10" parent="1" name="pg_toast_temp_1">
+      <object-id>11817</object-id>
+    </schema>
+    <schema id="11" parent="1" name="information_schema">
+      <object-id>12121</object-id>
+    </schema>
+    <sequence id="12" parent="6" name="lieferungen_liefer_nr_seq">
+      <object-id>16684</object-id>
+      <state-number>737</state-number>
+    </sequence>
+    <table id="13" parent="6" name="abteilungen">
+      <object-id>16636</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="14" parent="6" name="angestellte">
+      <object-id>16631</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="15" parent="6" name="artikel">
+      <object-id>16639</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="16" parent="6" name="auftraege">
+      <object-id>16645</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="17" parent="6" name="auftragspositionen">
+      <object-id>16651</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="18" parent="6" name="geh_klassen">
+      <object-id>16657</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="19" parent="6" name="kunden">
+      <object-id>16663</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="20" parent="6" name="lager">
+      <object-id>16666</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="21" parent="6" name="lagerbestand">
+      <object-id>16669</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="22" parent="6" name="lieferanten">
+      <object-id>16675</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="23" parent="6" name="lieferprogramme">
+      <object-id>16678</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="24" parent="6" name="lieferungen">
+      <object-id>16686</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="25" parent="6" name="struktur">
+      <object-id>16696</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="26" parent="6" name="teile">
+      <object-id>16702</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="27" parent="6" name="teile_werke">
+      <object-id>16708</object-id>
+      <state-number>793</state-number>
+    </table>
+    <table id="28" parent="6" name="werke">
+      <object-id>16711</object-id>
+      <state-number>793</state-number>
+    </table>
+    <column id="29" parent="13" name="abt_nr">
+      <state-number>727</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="30" parent="13" name="leiter">
+      <state-number>727</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="31" parent="13" name="name">
+      <state-number>727</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="32" parent="13" name="ort">
+      <state-number>727</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="33" parent="13" name="abt_pk">
+      <object-id>16730</object-id>
+      <columns>abt_nr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="34" parent="13" name="abt_pk">
+      <object-id>16731</object-id>
+      <columns>abt_nr</columns>
+      <underlying-index>abt_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="35" parent="14" name="ang_nr">
+      <state-number>726</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="36" parent="14" name="abt_nr">
+      <state-number>726</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="37" parent="14" name="aufgabenbeschreibung">
+      <state-number>726</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="38" parent="14" name="beruf">
+      <state-number>726</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="39" parent="14" name="nachname">
+      <state-number>726</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="40" parent="14" name="vorname">
+      <state-number>726</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="41" parent="14" name="geschlecht">
+      <state-number>726</state-number>
+      <mandatory>1</mandatory>
+      <data-type>char|0</data-type>
+    </column>
+    <column id="42" parent="14" name="eintrittsdatum">
+      <state-number>726</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="43" parent="14" name="gehalt">
+      <state-number>726</state-number>
+      <data-type>numeric(9,2)|0</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <column id="44" parent="14" name="abzuege">
+      <state-number>726</state-number>
+      <data-type>numeric(9,2)|0</data-type>
+      <default-expression>0</default-expression>
+    </column>
+    <column id="45" parent="14" name="ort">
+      <state-number>726</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="46" parent="14" name="strasse">
+      <state-number>726</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="47" parent="14" name="zeitstempel">
+      <state-number>726</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="48" parent="14" name="ang_pk">
+      <object-id>16732</object-id>
+      <columns>ang_nr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="49" parent="14" name="ang_abt_fk_i">
+      <object-id>16714</object-id>
+      <columns>abt_nr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="50" parent="14" name="ang_pk">
+      <object-id>16733</object-id>
+      <columns>ang_nr</columns>
+      <underlying-index>ang_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="51" parent="14" name="ang_abt_fk">
+      <object-id>16760</object-id>
+      <columns>abt_nr</columns>
+      <ref-key>~.abteilungen.abt_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <check id="52" parent="14" name="geschlecht">
+      <object-id>16842</object-id>
+      <columns>geschlecht</columns>
+      <predicate>geschlecht = ANY (ARRAY[&apos;w&apos;::bpchar, &apos;m&apos;::bpchar])</predicate>
+    </check>
+    <column id="53" parent="15" name="tnr">
+      <state-number>728</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="54" parent="15" name="bezeichnung">
+      <state-number>728</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="55" parent="15" name="artikel_typ">
+      <state-number>728</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="56" parent="15" name="verkaufspreis">
+      <state-number>728</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="57" parent="15" name="jahresumsatz">
+      <state-number>728</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="58" parent="15" name="zeitstempel">
+      <state-number>728</state-number>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="59" parent="15" name="ar_pk">
+      <object-id>16734</object-id>
+      <columns>tnr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="60" parent="15" name="ar_t_fk_i">
+      <object-id>16715</object-id>
+      <columns>tnr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="61" parent="15" name="ar_pk">
+      <object-id>16735</object-id>
+      <columns>tnr</columns>
+      <underlying-index>ar_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="62" parent="15" name="ar_t_fk">
+      <object-id>16765</object-id>
+      <columns>tnr</columns>
+      <ref-key>~.teile.t_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="63" parent="16" name="auftragsnr">
+      <state-number>729</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="64" parent="16" name="auftrags_typ">
+      <state-number>729</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="65" parent="16" name="kun_nr">
+      <state-number>729</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="66" parent="16" name="ang_nr">
+      <state-number>729</state-number>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="67" parent="16" name="bereits_gezahlt">
+      <state-number>729</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="68" parent="16" name="bestelldatum">
+      <state-number>729</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="69" parent="16" name="lieferdatum">
+      <state-number>729</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="70" parent="16" name="rechnungsdatum">
+      <state-number>729</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="71" parent="16" name="zeitstempel">
+      <state-number>729</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="72" parent="16" name="au_pk">
+      <object-id>16736</object-id>
+      <columns>auftragsnr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="73" parent="16" name="au_kun_fk_i">
+      <object-id>16717</object-id>
+      <columns>kun_nr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="74" parent="16" name="au_ang_fk_i">
+      <object-id>16716</object-id>
+      <columns>ang_nr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="75" parent="16" name="au_pk">
+      <object-id>16737</object-id>
+      <columns>auftragsnr</columns>
+      <underlying-index>au_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="76" parent="16" name="au_kun_fk">
+      <object-id>16770</object-id>
+      <columns>kun_nr</columns>
+      <ref-key>~.kunden.kun_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="77" parent="16" name="au_ang_fk">
+      <object-id>16775</object-id>
+      <columns>ang_nr</columns>
+      <ref-key>~.angestellte.ang_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <check id="78" parent="16" name="auftrags_typ">
+      <object-id>16840</object-id>
+      <columns>auftrags_typ</columns>
+      <predicate>(auftrags_typ)::text = ANY ((ARRAY[&apos;Angebot&apos;::character varying, &apos;Anfrage&apos;::character varying, &apos;Auftrag&apos;::character varying])::text[])</predicate>
+    </check>
+    <check id="79" parent="16" name="datum">
+      <object-id>16841</object-id>
+      <columns>bestelldatum
+lieferdatum</columns>
+      <predicate>bestelldatum &lt;= lieferdatum</predicate>
+    </check>
+    <column id="80" parent="17" name="tnr">
+      <state-number>730</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="81" parent="17" name="auftragsnr">
+      <state-number>730</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="82" parent="17" name="menge">
+      <state-number>730</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <index id="83" parent="17" name="ar_au_pk">
+      <object-id>16738</object-id>
+      <columns>tnr
+auftragsnr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="84" parent="17" name="ar_au_ar_fk_i">
+      <object-id>16718</object-id>
+      <columns>tnr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="85" parent="17" name="ar_au_au_fk_i">
+      <object-id>16719</object-id>
+      <columns>auftragsnr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="86" parent="17" name="ar_au_pk">
+      <object-id>16739</object-id>
+      <columns>tnr
+auftragsnr</columns>
+      <underlying-index>ar_au_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="87" parent="17" name="ar_au_ar_fk">
+      <object-id>16780</object-id>
+      <columns>tnr</columns>
+      <ref-key>~.artikel.ar_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="88" parent="17" name="ar_au_au_fk">
+      <object-id>16785</object-id>
+      <columns>auftragsnr</columns>
+      <ref-key>~.auftraege.au_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="89" parent="18" name="geh_klasse">
+      <state-number>731</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="90" parent="18" name="max_gehalt">
+      <state-number>731</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="91" parent="18" name="min_gehalt">
+      <state-number>731</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric|0</data-type>
+    </column>
+    <index id="92" parent="18" name="g_pk">
+      <object-id>16740</object-id>
+      <columns>geh_klasse</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="93" parent="18" name="g_pk">
+      <object-id>16741</object-id>
+      <columns>geh_klasse</columns>
+      <underlying-index>g_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="94" parent="19" name="kun_nr">
+      <state-number>732</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="95" parent="19" name="nachname">
+      <state-number>732</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="96" parent="19" name="vorname">
+      <state-number>732</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="97" parent="19" name="geschlecht">
+      <state-number>732</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="98" parent="19" name="ort">
+      <state-number>732</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="99" parent="19" name="strasse">
+      <state-number>732</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="100" parent="19" name="telefonnr">
+      <state-number>732</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="101" parent="19" name="zeitstempel">
+      <state-number>732</state-number>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="102" parent="19" name="kun_pk">
+      <object-id>16742</object-id>
+      <columns>kun_nr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="103" parent="19" name="kunden_i">
+      <object-id>16728</object-id>
+      <columns>vorname
+nachname</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="104" parent="19" name="kun_pk">
+      <object-id>16743</object-id>
+      <columns>kun_nr</columns>
+      <underlying-index>kun_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="105" parent="20" name="lanr">
+      <state-number>733</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="106" parent="20" name="bezeichnung">
+      <state-number>733</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="107" parent="20" name="ort">
+      <state-number>733</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="108" parent="20" name="strasse">
+      <state-number>733</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="109" parent="20" name="lag_pk">
+      <object-id>16744</object-id>
+      <columns>lanr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="110" parent="20" name="lag_pk">
+      <object-id>16745</object-id>
+      <columns>lanr</columns>
+      <underlying-index>lag_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="111" parent="21" name="lanr">
+      <state-number>734</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="112" parent="21" name="tnr">
+      <state-number>734</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="113" parent="21" name="bestand">
+      <state-number>734</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="114" parent="21" name="zeitstempel">
+      <state-number>734</state-number>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="115" parent="21" name="lag_t_pk">
+      <object-id>16746</object-id>
+      <columns>lanr
+tnr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="116" parent="21" name="lag_t_lag_fk_i">
+      <object-id>16720</object-id>
+      <columns>lanr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="117" parent="21" name="lag_t_t_fk_i">
+      <object-id>16721</object-id>
+      <columns>tnr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="118" parent="21" name="lag_t_pk">
+      <object-id>16747</object-id>
+      <columns>lanr
+tnr</columns>
+      <underlying-index>lag_t_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="119" parent="21" name="lag_t_lag_fk">
+      <object-id>16790</object-id>
+      <columns>lanr</columns>
+      <ref-key>~.lager.lag_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="120" parent="21" name="lag_t_t_fk">
+      <object-id>16795</object-id>
+      <columns>tnr</columns>
+      <ref-key>~.teile.t_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="121" parent="22" name="lief_nr">
+      <state-number>735</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="122" parent="22" name="name">
+      <state-number>735</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="123" parent="22" name="ort">
+      <state-number>735</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="124" parent="22" name="strasse">
+      <state-number>735</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="125" parent="22" name="telefonnr">
+      <state-number>735</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="126" parent="22" name="zeitstempel">
+      <state-number>735</state-number>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="127" parent="22" name="lief_pk">
+      <object-id>16748</object-id>
+      <columns>lief_nr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="128" parent="22" name="lief_pk">
+      <object-id>16749</object-id>
+      <columns>lief_nr</columns>
+      <underlying-index>lief_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="129" parent="23" name="lief_nr">
+      <state-number>736</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="130" parent="23" name="tnr">
+      <state-number>736</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="131" parent="23" name="bestellnr">
+      <state-number>736</state-number>
+      <data-type>numeric(20)|0</data-type>
+    </column>
+    <column id="132" parent="23" name="einkaufspreis">
+      <state-number>736</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="133" parent="23" name="gesamtmenge">
+      <state-number>736</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="134" parent="23" name="zeitstempel">
+      <state-number>736</state-number>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="135" parent="23" name="lp_pk">
+      <object-id>16750</object-id>
+      <columns>lief_nr
+tnr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="136" parent="23" name="lp_lief_fk_i">
+      <object-id>16722</object-id>
+      <columns>lief_nr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="137" parent="23" name="lp_t_fk_i">
+      <object-id>16723</object-id>
+      <columns>tnr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="138" parent="23" name="lp_pk">
+      <object-id>16751</object-id>
+      <columns>lief_nr
+tnr</columns>
+      <underlying-index>lp_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="139" parent="23" name="lp_lief_fk">
+      <object-id>16800</object-id>
+      <columns>lief_nr</columns>
+      <ref-key>~.lieferanten.lief_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="140" parent="23" name="lp_t_fk">
+      <object-id>16805</object-id>
+      <columns>tnr</columns>
+      <ref-key>~.teile.t_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="141" parent="24" name="liefer_nr">
+      <state-number>737</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;lieferungen_liefer_nr_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="142" parent="24" name="lief_nr">
+      <state-number>737</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="143" parent="24" name="tnr">
+      <state-number>737</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="144" parent="24" name="lief_datum">
+      <state-number>737</state-number>
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="145" parent="24" name="menge">
+      <state-number>737</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric|0</data-type>
+      <default-expression>1</default-expression>
+    </column>
+    <column id="146" parent="24" name="zeitstempel">
+      <state-number>737</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="147" parent="24" name="lieferungen_pkey">
+      <object-id>16694</object-id>
+      <columns>liefer_nr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="148" parent="24" name="lg_lief_fk_i">
+      <object-id>16724</object-id>
+      <columns>lief_nr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="149" parent="24" name="lg_t_fk_i">
+      <object-id>16725</object-id>
+      <columns>tnr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="150" parent="24" name="lieferungen_pkey">
+      <object-id>16695</object-id>
+      <columns>liefer_nr</columns>
+      <underlying-index>lieferungen_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="151" parent="24" name="lg_lief_fk">
+      <object-id>16810</object-id>
+      <columns>lief_nr</columns>
+      <ref-key>~.lieferanten.lief_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="152" parent="24" name="lg_t_fk">
+      <object-id>16815</object-id>
+      <columns>tnr</columns>
+      <ref-key>~.teile.t_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="153" parent="25" name="oteil">
+      <state-number>738</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="154" parent="25" name="uteil">
+      <state-number>738</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="155" parent="25" name="position">
+      <state-number>738</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="156" parent="25" name="menge">
+      <state-number>738</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="157" parent="25" name="ausschuss">
+      <state-number>738</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="158" parent="25" name="arbeitsgang">
+      <state-number>738</state-number>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="159" parent="25" name="zeitstempel">
+      <state-number>738</state-number>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="160" parent="25" name="s_pk">
+      <object-id>16752</object-id>
+      <columns>oteil
+uteil
+position</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="161" parent="25" name="struktur_i">
+      <object-id>16729</object-id>
+      <columns>oteil
+uteil</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="162" parent="25" name="s_pk">
+      <object-id>16753</object-id>
+      <columns>oteil
+uteil
+position</columns>
+      <underlying-index>s_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="163" parent="25" name="s_t_fk">
+      <object-id>16825</object-id>
+      <columns>oteil</columns>
+      <ref-key>~.teile.t_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="164" parent="25" name="s_t_fk2">
+      <object-id>16820</object-id>
+      <columns>uteil</columns>
+      <ref-key>~.teile.t_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="165" parent="26" name="tnr">
+      <state-number>739</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="166" parent="26" name="me">
+      <state-number>739</state-number>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="167" parent="26" name="bezeichnung">
+      <state-number>739</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="168" parent="26" name="typ">
+      <state-number>739</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="169" parent="26" name="herstellkosten">
+      <state-number>739</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="170" parent="26" name="einkaufspreis">
+      <state-number>739</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="171" parent="26" name="mindestbestand">
+      <state-number>739</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="172" parent="26" name="bestand">
+      <state-number>739</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="173" parent="26" name="lieferzeit">
+      <state-number>739</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="174" parent="26" name="herstelldauer">
+      <state-number>739</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="175" parent="26" name="gewicht">
+      <state-number>739</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="176" parent="26" name="reserviert">
+      <state-number>739</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="177" parent="26" name="verfuegbar">
+      <state-number>739</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="178" parent="26" name="zeitstempel">
+      <state-number>739</state-number>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="179" parent="26" name="t_pk">
+      <object-id>16754</object-id>
+      <columns>tnr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="180" parent="26" name="t_pk">
+      <object-id>16755</object-id>
+      <columns>tnr</columns>
+      <underlying-index>t_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <check id="181" parent="26" name="typ">
+      <object-id>16843</object-id>
+      <columns>typ</columns>
+      <predicate>(typ)::text = ANY ((ARRAY[&apos;Artikel&apos;::character varying, &apos;Baugruppe&apos;::character varying, &apos;Material&apos;::character varying])::text[])</predicate>
+    </check>
+    <column id="182" parent="27" name="tnr">
+      <state-number>740</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="183" parent="27" name="wnr">
+      <state-number>740</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <index id="184" parent="27" name="t_we_pk">
+      <object-id>16756</object-id>
+      <columns>tnr
+wnr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="185" parent="27" name="t_we_t_fk_i">
+      <object-id>16726</object-id>
+      <columns>tnr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="186" parent="27" name="t_we_we_fk_i">
+      <object-id>16727</object-id>
+      <columns>wnr</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="187" parent="27" name="t_we_pk">
+      <object-id>16757</object-id>
+      <columns>tnr
+wnr</columns>
+      <underlying-index>t_we_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="188" parent="27" name="t_we_t_fk">
+      <object-id>16830</object-id>
+      <columns>tnr</columns>
+      <ref-key>~.teile.t_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="189" parent="27" name="t_we_we_fk">
+      <object-id>16835</object-id>
+      <columns>wnr</columns>
+      <ref-key>~.werke.we_pk</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="190" parent="28" name="wnr">
+      <state-number>741</state-number>
+      <mandatory>1</mandatory>
+      <data-type>numeric(38)|0</data-type>
+    </column>
+    <column id="191" parent="28" name="bezeichnung">
+      <state-number>741</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="192" parent="28" name="ort">
+      <state-number>741</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="193" parent="28" name="strasse">
+      <state-number>741</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <index id="194" parent="28" name="we_pk">
+      <object-id>16758</object-id>
+      <columns>wnr</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="195" parent="28" name="we_pk">
+      <object-id>16759</object-id>
+      <columns>wnr</columns>
+      <underlying-index>we_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
