@@ -5,7 +5,7 @@ import java.sql.*;
 /**
  * Created by rk on 06.12.16.
  */
-public class Main {
+public class BasisJdbcTest {
     public static void main(String[] args) throws Exception {
 
         //Treiber wird geladen und im DriverManager registriert.
@@ -57,7 +57,6 @@ public class Main {
         }
         resultset.close();
         System.out.println("----------------------------------------");
-
 
 
         // STATEMENT
