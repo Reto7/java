@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Fach_4_Datenbanken.modellierung</OriginalElement>
+  <nodes>
+    <node x="-12.0" y="-11.0">Fach_4_Datenbanken.modellierung.Person</node>
+    <node x="87.0" y="119.0">Fach_4_Datenbanken.modellierung.Verein</node>
+    <node x="-168.5" y="-1.0">Fach_4_Datenbanken.modellierung.Mitglied</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="35.5" y="15.0" />
+  <SelectedNodes>
+    <node>Fach_4_Datenbanken.modellierung.Mitglied</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
