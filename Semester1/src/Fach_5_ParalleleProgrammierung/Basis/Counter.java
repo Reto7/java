@@ -1,10 +1,11 @@
-package Fach_5_ParalleleProgrammierung;
+package Fach_5_ParalleleProgrammierung.Basis;
 
 /**
  * Siehe TEST-Klasse CounterTest!
  */
 public class Counter implements Runnable{
 
+    // das in der run() Methode kann parallel ablaufen
     @Override
     public void run() {
         for (int i=1;  i<=10; i++) {

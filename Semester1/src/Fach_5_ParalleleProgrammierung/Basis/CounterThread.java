@@ -1,10 +1,11 @@
-package Fach_5_ParalleleProgrammierung;
+package Fach_5_ParalleleProgrammierung.Basis;
 
 /**
  * Siehe TEST-Klasse CounterThreadTest!
  */
 public class CounterThread extends Thread {
 
+    // das in der run() Methode kann parallel ablaufen
     @Override
     public void run() {
         for (int i=1;  i<=10; i++) {

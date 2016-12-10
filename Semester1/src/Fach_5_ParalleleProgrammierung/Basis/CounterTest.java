@@ -1,4 +1,4 @@
-package Fach_5_ParalleleProgrammierung;
+package Fach_5_ParalleleProgrammierung.Basis;
 
 
 /**
@@ -9,6 +9,8 @@ public class CounterTest {
     public static void main(String[] args) {
         Thread t = new Thread(new Counter());
         t.start();
+        Thread t2 = new Thread(new Counter());
+        t2.start();
     }
 
 }

@@ -1,4 +1,4 @@
-package Fach_5_ParalleleProgrammierung;
+package Fach_5_ParalleleProgrammierung.Basis;
 
 
 /**
@@ -7,8 +7,11 @@ package Fach_5_ParalleleProgrammierung;
 public class CounterThreadTest {
 
     public static void main(String[] args) {
+        //
         CounterThread ct = new CounterThread();
         ct.start();
+        CounterThread ct2 = new CounterThread();
+        ct2.start();
     }
 
 
