@@ -30,9 +30,9 @@ public class RaceCar extends Thread {
         lin = new Line2D.Float(100, this.startLine, 100, this.startLine);
 
         Float nextPosition;
-        for (int i=1; i<=10; i++) {
+        for (int i=1; i<=1000; i++) {
 
-            nextPosition = Float.valueOf(100+(i*10));
+            nextPosition = Float.valueOf(100+(i*2));
             System.out.println(driverName +" " +i +": " +nextPosition);
 
             lin.setLine(100, this.startLine, nextPosition, this.startLine);
