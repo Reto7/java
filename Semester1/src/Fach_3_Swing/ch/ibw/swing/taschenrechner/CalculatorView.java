@@ -1,8 +1,9 @@
 
 package Fach_3_Swing.ch.ibw.swing.taschenrechner;
 
-import javax.swing.*;
 import java.awt.*;
+
+import javax.swing.*;
 
 
 /** Die Repraesentionsklasse (View) unseres Taschenrechners erweitert
@@ -20,19 +21,23 @@ public class CalculatorView extends JPanel{
         // Die folgenden beiden Kommentarzeilen muessen wir
         // fuer die letzte Aufgabe wieder einkommentieren
         // +++++++++++++++++++++++++++++++++
-        // CalculatorModel cm = new CalculatorModel();
-        // CalculatorController cc = new CalculatorController(this,cm);
+        CalculatorModel cm = new CalculatorModel();
+        CalculatorController cc = new CalculatorController(this,cm);
         
         /* BorderLayout */
         setLayout(new BorderLayout());
+        setPreferredSize(new Dimension(600,400));
        
         /* Anzeige erzeugen und in die Mitte platzieren */
         anzeige = new JTextField();
         add(anzeige,BorderLayout.CENTER);
+
+        JPanel rahmen = new JPanel(new FlowLayout());
+        add(rahmen,BorderLayout.SOUTH);
        
         /* temporaeres Panel erzeugen und im Sueden platzieren */
-        JPanel tmp = new JPanel(new GridLayout(4,5));
-        add(tmp,BorderLayout.SOUTH);
+        JPanel ziffernBlock = new JPanel(new GridLayout(4,3));
+
         
         // Das temporaere Panel muss nun noch mit Inhalt
         // gefuellt werden. Damit eine aehnliche Repraesention
@@ -44,9 +49,74 @@ public class CalculatorView extends JPanel{
         // von oben nach unten gefuellt ...
         
        
-  
-        
-             
+        JButton b1 = new JButton("1");
+        JButton b2 = new JButton("2");
+        JButton b3 = new JButton("3");
+        JButton b4 = new JButton("4");
+        JButton b5 = new JButton("5");
+        JButton b6 = new JButton("6");
+        JButton b7 = new JButton("7");
+        JButton b8 = new JButton("8");
+        JButton b9 = new JButton("9");
+        JLabel dummy1 = new JLabel("");
+        JButton b0 = new JButton("0");
+
+
+        ziffernBlock.add(b1);
+        ziffernBlock.add(b2);
+        ziffernBlock.add(b3);
+        ziffernBlock.add(b4);
+        ziffernBlock.add(b5);
+        ziffernBlock.add(b6);
+        ziffernBlock.add(b7);
+        ziffernBlock.add(b8);
+        ziffernBlock.add(b9);
+        ziffernBlock.add(dummy1);
+        ziffernBlock.add(b0);
+
+        rahmen.add(ziffernBlock,BorderLayout.WEST);
+
+
+        /* temporaeres Panel erzeugen und im Sueden platzieren */
+        JPanel operationsBlock = new JPanel(new GridLayout(4,2));
+
+        JButton o1 = new JButton("+");
+        JButton o2 = new JButton("-");
+        JButton o3 = new JButton("*");
+        JButton o4 = new JButton("/");
+        JButton o5 = new JButton("C");
+        JButton o6 = new JButton(".");
+        JButton o7 = new JButton("=");
+
+        operationsBlock.add(o1);
+        operationsBlock.add(o2);
+        operationsBlock.add(o3);
+        operationsBlock.add(o4);
+        operationsBlock.add(o5);
+        operationsBlock.add(o6);
+        operationsBlock.add(o7);
+
+        o1.addActionListener(cc); // Füge Listener zu Button
+        o2.addActionListener(cc); // Füge Listener zu Button
+        o3.addActionListener(cc); // Füge Listener zu Button
+        o4.addActionListener(cc); // Füge Listener zu Button
+        o5.addActionListener(cc); // Füge Listener zu Button
+        o6.addActionListener(cc); // Füge Listener zu Button
+        o7.addActionListener(cc); // Füge Listener zu Button
+
+        b1.addActionListener(cc); // Füge Listener zu Button
+        b2.addActionListener(cc); // Füge Listener zu Button
+        b3.addActionListener(cc); // Füge Listener zu Button
+        b4.addActionListener(cc); // Füge Listener zu Button
+        b5.addActionListener(cc); // Füge Listener zu Button
+        b6.addActionListener(cc); // Füge Listener zu Button
+        b7.addActionListener(cc); // Füge Listener zu Button
+        b8.addActionListener(cc); // Füge Listener zu Button
+        b9.addActionListener(cc); // Füge Listener zu Button
+        b0.addActionListener(cc); // Füge Listener zu Button
+
+
+        rahmen.add(operationsBlock,BorderLayout.EAST);
     }
     
     

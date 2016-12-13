@@ -162,7 +162,10 @@ public class CalculatorModel {
             currentBuffer = new StringBuffer();  // TODO, lieber loeschen
 
         }
-        
+
+    public StringBuffer getCurrentBuffer() {
+        return currentBuffer;
+    }
 
         /*
          * Die Mainmethode enthaelt ein paar einfache Tests

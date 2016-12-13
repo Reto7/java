@@ -1,4 +1,4 @@
-package Fach_3_Swing.ch.ibw.swing.taschenrechner;
+package Fach_3_Swing.ch.ibw.swing.taschenrechner.solution;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,7 +35,6 @@ public class CalculatorController implements ActionListener {
      * @param e - ActionEvent e
      */
     public void actionPerformed(ActionEvent e) {
-        System.out.println("action command: " +e.getActionCommand().toString());
         /* Zunaechst betrachten wir die Ereignisse die einer
            gesonderten Behandlung beduerfen; die Operatoren.
            Die Ziffern koennen gemeinsam betrachtet werden. */
@@ -45,32 +44,31 @@ public class CalculatorController implements ActionListener {
         } else if (e.getActionCommand().equals("-")) {
             cm.setOperator(CalculatorModel.MINUS);
             cv.setAnzeige("-");
-        } else if (e.getActionCommand().equals("*")) {
-            cm.setOperator(CalculatorModel.MAL);
-            cv.setAnzeige("*");
         } else if (e.getActionCommand().equals("/")) {
             cm.setOperator(CalculatorModel.DURCH);
             cv.setAnzeige("/");
+        } else if (e.getActionCommand().equals("*")) {
+            cm.setOperator(CalculatorModel.MAL);
+            cv.setAnzeige("*");
+           
         // Die Ereignisbehandlung fuer die Operatoren '-',
         // '*','/' und '=' muessen an dieser Stelle aehnlich 
         // implementiert werden.
         // +++++++++++++++++++++++++++++++++++++++++++++++
-        } else if (e.getActionCommand().equals("C")) {
-            System.out.println("reset!!!");
+        } else if (e.getActionCommand().equals("C")){
             cm.reset();
             cv.setAnzeige("");
-        } else if (e.getActionCommand().equals("=")) {
-            Double resultat = cm.berechne();
-            cv.setAnzeige(String.valueOf(resultat));
+        } else if (e.getActionCommand().equals("=")){
+            Double ergb = cm.berechne();
+            cv.setAnzeige(ergb.toString());
+            
         } else {  
             // Die Ereignisbehandlung fuer die Ziffern
             // kann geschickt zusammengefasst werden!
-            // Hinweis : e.getActionCommand() ...
-            for(int i=0; i < e.getActionCommand().getBytes().length;i++){
-                cm.addZiffer((char) e.getActionCommand().getBytes()[i]);
-
-            }
-            cv.setAnzeige(new String(cm.getCurrentBuffer()));
+            // Hinweis : e.getActionCommand() ... 
+            char ziffer = e.getActionCommand().charAt(0);
+            String zahl = cm.addZiffer(ziffer);
+            cv.setAnzeige(zahl);
             
         }
              
