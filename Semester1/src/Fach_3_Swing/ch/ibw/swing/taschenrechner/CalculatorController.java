@@ -24,7 +24,6 @@ public class CalculatorController implements ActionListener {
     public CalculatorController(CalculatorView cv, CalculatorModel cm){
         this.cv = cv;
         this.cm = cm;
-        
     }
 
  
@@ -68,7 +67,6 @@ public class CalculatorController implements ActionListener {
             // Hinweis : e.getActionCommand() ...
             for(int i=0; i < e.getActionCommand().getBytes().length;i++){
                 cm.addZiffer((char) e.getActionCommand().getBytes()[i]);
-
             }
             cv.setAnzeige(new String(cm.getCurrentBuffer()));
             

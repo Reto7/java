@@ -64,28 +64,23 @@ public class CalculatorModel {
             if (getOperator()!=null) System.out.println("Operator :" +getOperator());
             System.out.println("-----------------------------");
 
-            // TODO das hier muss weg!
-            if (getOperand1()==null || getOperand2()==null ||getOperator()==null ){
-                ergebnis = DENMUESSENWIRLOSWERDEN;
-            }
 
-
-            switch (operator) {
-                case (CalculatorModel.PLUS):
-                    ergebnis = operand1 + operand2;
-                    break;
-                case (CalculatorModel.MINUS):
-                    ergebnis = operand1 - operand2;
-                    break;
-                case (CalculatorModel.MAL):
-                    ergebnis = operand1 * operand2;
-                    break;
-                case (CalculatorModel.DURCH):
-                    ergebnis = operand1 / operand2;
-                    break;
-
-                // Die Operatoren MINUS, MAL, DURCH
-                // muessen noch hinzugefuegt werden.
+            // nur rechnen wenn alle drei benoetigten Angaben vorhanden sind!
+            if (getOperand1()!=null &&getOperand2()!=null &&getOperator()!=null ){
+                switch (operator) {
+                    case (CalculatorModel.PLUS):
+                        ergebnis = operand1 + operand2;
+                        break;
+                    case (CalculatorModel.MINUS):
+                        ergebnis = operand1 - operand2;
+                        break;
+                    case (CalculatorModel.MAL):
+                        ergebnis = operand1 * operand2;
+                        break;
+                    case (CalculatorModel.DURCH):
+                        ergebnis = operand1 / operand2;
+                        break;
+                }
             }
             return ergebnis;
         }
@@ -146,8 +141,8 @@ public class CalculatorModel {
                 setOperand1(Double.parseDouble(currentBuffer.toString()));
                 currentBuffer.setLength(0);
 
-                System.out.println("set operator: " +operator);
                 this.operator = operator;
+                System.out.println("set operator: " +this.operator);
             }
         }
         
@@ -156,10 +151,17 @@ public class CalculatorModel {
          */
         public void reset(){
             // Dazu ist, glaube ich, keine weitere Erklaerung notwendig ...
+            /*
             setOperand1(null);
             setOperand2(null);
             //currentBuffer.setLength(0);
             currentBuffer = new StringBuffer();  // TODO, lieber loeschen
+            */
+
+            operand1 = null;
+            operand2 = null;
+            operator = null;
+            currentBuffer.setLength(0);
 
         }
 

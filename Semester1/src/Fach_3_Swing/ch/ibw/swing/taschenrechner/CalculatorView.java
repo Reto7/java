@@ -4,6 +4,7 @@ package Fach_3_Swing.ch.ibw.swing.taschenrechner;
 import java.awt.*;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 
 /** Die Repraesentionsklasse (View) unseres Taschenrechners erweitert
@@ -26,16 +27,17 @@ public class CalculatorView extends JPanel{
         
         /* BorderLayout */
         setLayout(new BorderLayout());
-        setPreferredSize(new Dimension(600,400));
+        setPreferredSize(new Dimension(300,300));
        
         /* Anzeige erzeugen und in die Mitte platzieren */
         anzeige = new JTextField();
         add(anzeige,BorderLayout.CENTER);
 
-        JPanel rahmen = new JPanel(new FlowLayout());
+        JPanel rahmen = new JPanel();
+        rahmen.setBorder(new EmptyBorder(2, 2, 2, 2));
         add(rahmen,BorderLayout.SOUTH);
-       
-        /* temporaeres Panel erzeugen und im Sueden platzieren */
+
+        rahmen.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
         JPanel ziffernBlock = new JPanel(new GridLayout(4,3));
 
         
@@ -95,6 +97,8 @@ public class CalculatorView extends JPanel{
         operationsBlock.add(o5);
         operationsBlock.add(o6);
         operationsBlock.add(o7);
+
+
 
         o1.addActionListener(cc); // Füge Listener zu Button
         o2.addActionListener(cc); // Füge Listener zu Button
