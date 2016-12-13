@@ -53,6 +53,11 @@ public class CalculatorModel {
             //System.out.println("buffer laenge: " +currentBuffer.length());
             //System.out.println("operator ist : " +this.operator);
             if ((currentBuffer.length() > 0) && (this.operator != null)) {
+                // check ob nur "." enthalten ist
+                if (currentBuffer.toString().equals(".")) {
+                    currentBuffer.setLength(0);
+                    currentBuffer.append("0.0");
+                }
                 setOperand2(Double.parseDouble(currentBuffer.toString()));
                 currentBuffer.setLength(0);
             }
@@ -82,7 +87,10 @@ public class CalculatorModel {
                         break;
                 }
             }
+            // nun alles wieder zuruecksetzen, da direkt weitergerechnet werden kann, ohne "Clear"-Taste
+            reset();
             return ergebnis;
+
         }
 
     public Double getOperand1() {
@@ -138,6 +146,11 @@ public class CalculatorModel {
              * Exception, die durch folgende Implementierung
              * NICHT abgefangen wird! */
             if ((currentBuffer.length() > 0) && (this.operator == null)) {
+                // check ob nur "." enthalten ist
+                if (currentBuffer.toString().equals(".")) {
+                    currentBuffer.setLength(0);
+                    currentBuffer.append("0.0");
+                }
                 setOperand1(Double.parseDouble(currentBuffer.toString()));
                 currentBuffer.setLength(0);
 

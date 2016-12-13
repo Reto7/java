@@ -69,6 +69,7 @@ public class CalculatorController implements ActionListener {
                 cm.addZiffer((char) e.getActionCommand().getBytes()[i]);
             }
             cv.setAnzeige(new String(cm.getCurrentBuffer()));
+
             
         }
              

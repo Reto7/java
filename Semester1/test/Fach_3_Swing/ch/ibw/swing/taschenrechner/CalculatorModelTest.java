@@ -107,7 +107,6 @@ public class CalculatorModelTest {
 
     @Test
     public void t5() {
-        // TODO, Fehleingaben testen!
             /* Modell zuruecksetzen */
         cm.reset();
             /* Operator nicht gesetzt */
@@ -126,7 +125,6 @@ public class CalculatorModelTest {
 
     @Test
     public void t6() {
-        // TODO, Fehleingaben testen!
             /* Modell zuruecksetzen */
         cm.reset();
             /* Operand2 leer bzw. nicht gesetzt */
@@ -141,6 +139,44 @@ public class CalculatorModelTest {
                 System.out.println("Test 'Operand2 leer bzw. nicht gesetzt' NICHT erfolgreich! 5 != "+ergb);
             }
             */
+    }
+
+
+    @Test
+    public void t7() {
+            /* Modell zuruecksetzen */
+        cm.reset();
+            /* Operand2 leer bzw. nicht gesetzt */
+        cm.addZiffer('.');
+        cm.addZiffer('5');
+        cm.setOperator(CalculatorModel.PLUS);
+        cm.addZiffer('1');
+        ergb = cm.berechne();
+        Assert.assertEquals(new Double(1.5), ergb);
+    }
+
+    @Test
+    public void t8() {
+            /* Modell zuruecksetzen */
+        cm.reset();
+            /* Operand2 leer bzw. nicht gesetzt */
+        cm.addZiffer('.');
+        cm.setOperator(CalculatorModel.PLUS);
+        cm.addZiffer('1');
+        ergb = cm.berechne();
+        Assert.assertEquals(new Double(1.0), ergb);
+    }
+
+    @Test
+    public void t9() {
+            /* Modell zuruecksetzen */
+        cm.reset();
+            /* Operand2 leer bzw. nicht gesetzt */
+        cm.addZiffer('1');
+        cm.setOperator(CalculatorModel.PLUS);
+        cm.addZiffer('.');
+        ergb = cm.berechne();
+        Assert.assertEquals(new Double(1.0), ergb);
     }
 
 }
