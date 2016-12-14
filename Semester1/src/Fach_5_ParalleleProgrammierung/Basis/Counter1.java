@@ -3,11 +3,11 @@ package Fach_5_ParalleleProgrammierung.Basis;
 /**
  * Siehe TEST-Klasse CounterTest!
  */
-public class Counter implements Runnable{
+public class Counter1 implements Runnable{
 
     String counterName;
 
-    public Counter(String counterName) {
+    public Counter1(String counterName) {
         this.counterName = counterName;
     }
 
