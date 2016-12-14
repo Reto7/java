@@ -42,18 +42,28 @@ public class CounterZentral implements Runnable{
             } catch (InterruptedException e) {
 
             }
-            // KRITISCHER BEREICH zusammen, sychronisiert  --> TODO weshalb geht das so nicht??
-            synchronized (lock) {
-                System.out.println(Thread.currentThread() + ", zentraler-Zaehler: " + iZentral);
-                if (iZentral < 20) {
-                    iZentral++;
-                } else {
-                    bContinue = false;
-                }
-            }
+            // KRITISCHER BEREICH zusammen, sychronisiert
+            bContinue = increment();
+
+            //System.out.println(Thread.currentThread() + ", zentraler-Zaehler: " + getIzaehler());
+
         }
     }
 
+    private synchronized boolean increment() {
+        System.out.println(Thread.currentThread() + ", zentraler-Zaehler: " + getIzaehler());
+        if (iZentral < 20) {
+            iZentral++;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public synchronized long getIzaehler()
+    {
+        return iZentral;
+    }
 
 }
 
