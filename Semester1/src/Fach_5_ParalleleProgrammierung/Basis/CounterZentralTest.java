@@ -7,9 +7,9 @@ package Fach_5_ParalleleProgrammierung.Basis;
 public class CounterZentralTest {
 
     public static void main(String[] args) {
-        Thread t = new Thread(new Counter2(),"erster");
+        Thread t = new Thread(new CounterZentral(),"erster");
         t.start();
-        Thread t2 = new Thread(new Counter2(),"zweiter");
+        Thread t2 = new Thread(new CounterZentral(),"zweiter");
         t2.start();
 
     }
