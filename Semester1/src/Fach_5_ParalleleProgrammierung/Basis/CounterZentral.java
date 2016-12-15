@@ -7,7 +7,7 @@ import Fach_5_ParalleleProgrammierung.Util.Random;
  */
 public class CounterZentral implements Runnable{
 
-    private int iZentral = 0;
+    private static int iZentral = 0;
     String lock = "lock";
 
     // das in der run() Methode kann parallel ablaufen
