@@ -1,3 +1,5 @@
+package Fach_5_ParalleleProgrammierung.ReaderWriterProblem.Step4;
+
 public class Data {
 	Data(int size) {
 		values = new int[size];

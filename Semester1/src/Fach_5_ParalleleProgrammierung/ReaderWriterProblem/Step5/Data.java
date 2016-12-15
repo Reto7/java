@@ -1,3 +1,5 @@
+package Fach_5_ParalleleProgrammierung.ReaderWriterProblem.Step5;
+
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class Data {

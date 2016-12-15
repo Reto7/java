@@ -1,3 +1,5 @@
+package Fach_5_ParalleleProgrammierung.ReaderWriterProblem.Step2;
+
 import java.util.Random;
 
 public class Writer extends Thread {

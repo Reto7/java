@@ -1,3 +1,5 @@
+package Fach_5_ParalleleProgrammierung.ReaderWriterProblem.Step2;
+
 public class Aufgabe {
 
 	public static void main(String[] args) {
