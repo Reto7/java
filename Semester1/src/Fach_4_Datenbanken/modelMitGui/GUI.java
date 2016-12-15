@@ -15,6 +15,28 @@ public class GUI extends JFrame {
     public GUI() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        /*
+        Vector columns = new Vector();
+        columns.add("Name");
+        columns.add("Ort");
+
+        //Vector<AbteilungTO> abteilungsListe = new Vector<AbteilungTO>();
+        //abteilungsListe = new Vector<AbteilungTO>();
+        getAbteilungsListe();
+        System.out.println("Abteilungsliste Anzahl: "+abteilungsListe.size());
+
+        Vector vectorOfVector = new Vector(abteilungsListe.size());
+        for (AbteilungTO a : abteilungsListe) {
+            Vector vec = new Vector(2);   // create a vector for each row
+            vec.add(a.getName());
+            vec.add(a.getOrt());
+            vectorOfVector.add(vec);
+        }
+
+        // JTable table = new JTable(data, columns);
+        JTable table = new JTable(vectorOfVector, columns);
+        */
+
         JTable table = new JTable();
 
         AbteilungController ac = new AbteilungController();
