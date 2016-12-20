@@ -13,6 +13,7 @@ public class Reader extends Thread {
 		Random random = new Random();
 		while (true) {
 			StringBuffer buf = new StringBuffer();
+			// diese beiden (while und ++ muessen zwingend hintereinander laufen!
 			synchronized(data) {
 				while (data.noWriters != 0) {
 				}

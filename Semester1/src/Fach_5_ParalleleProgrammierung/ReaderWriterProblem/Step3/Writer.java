@@ -12,6 +12,7 @@ public class Writer extends Thread {
 	public void run() {
 		Random random = new Random();
 		while (true) {
+			// diese beiden (while und ++ muessen zwingend hintereinander laufen!
 			synchronized(data) {
 				while(data.noReaders != 0 || data.noWriters != 0) {
 				}

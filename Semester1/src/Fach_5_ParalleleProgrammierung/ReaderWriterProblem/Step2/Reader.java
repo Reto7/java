@@ -14,7 +14,10 @@ public class Reader extends Thread {
 		while (true) {
 			StringBuffer buf = new StringBuffer();
 			while (data.noWriters != 0) {
+				//nichts tun, also wie warten bis endlich nicht mehr geschrieben wird!
+				// NENNT SICH SPIN LOCK! dreht wie verrueckt und benoetigt viel CPU!
 			}
+			// Problem genau hier!! koennte von einem Writer hier unterbrochen werden!
 			data.noReaders++;
 			for (int j=0; j < data.values.length; j++) {
 				buf.append(data.values[j]);

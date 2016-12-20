@@ -7,6 +7,7 @@ public class Data {
 		noWriters = 0;
 	}
 
+	// ich haette gerne lesenden Zugriff
 	synchronized void requestRead() throws InterruptedException {
 		while (noWriters != 0) {
 			wait();
@@ -17,10 +18,12 @@ public class Data {
 	synchronized void releaseRead() {
 		noReaders--;
 		if (noReaders == 0) {
+			// alle waiting benachrichtigen/aufwecken
 			notifyAll();
 		}
 	}
 
+	// ich haette gerne schreibenden Zugriff
 	synchronized void requestWrite() throws InterruptedException {
 		while (noReaders != 0 || noWriters != 0) {
 			wait();
@@ -30,7 +33,10 @@ public class Data {
 
 	synchronized void releaseWrite() {
 		noWriters--;
+		// pruefung eigentlich nicht notwendig, da es sowieso nur einen writer geben kann.
+		// mit noWriters-- geht dieser immer auf 0
 		if (noWriters == 0) {
+			// alle waiting benachrichtigen/aufwecken
 			notifyAll();
 		}
 	}
