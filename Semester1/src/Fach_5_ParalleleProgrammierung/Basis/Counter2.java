@@ -1,21 +1,16 @@
 package Fach_5_ParalleleProgrammierung.Basis;
 
 /**
- * Siehe TEST-Klasse CounterThreadTest!
+ * Siehe TEST-Klasse CounterTest!
  */
-public class CounterThread extends Thread {
+public class Counter2 implements Runnable{
 
-    String counterName;
-
-    public CounterThread(String counterName) {
-        this.counterName = counterName;
-    }
 
     // das in der run() Methode kann parallel ablaufen
     @Override
     public void run() {
         for (int i=1;  i<=10; i++) {
-            System.out.println(counterName +", Zaehler: " +i);
+            System.out.println(Thread.currentThread()  +", Zaehler: " +i);
             try {
                 // 1 Sekunde warten
                 Thread.sleep(1000);

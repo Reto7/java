@@ -8,9 +8,9 @@ public class CounterThreadTest {
 
     public static void main(String[] args) {
         //
-        CounterThread ct = new CounterThread();
+        CounterThread ct = new CounterThread("counter 1");
         ct.start();
-        CounterThread ct2 = new CounterThread();
+        CounterThread ct2 = new CounterThread("counter 2");
         ct2.start();
     }
 
