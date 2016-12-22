@@ -1,0 +1,2 @@
+// angaben von relativen pfaden starten immer auf dem Projektverzeichnis
+// hier also auf:  /home/rk/IntelliJ-Workspace/Semester1
