@@ -24,7 +24,7 @@ public class DistinctWords {
 
         String line;
         while ((line = bufferedReader.readLine()) != null) {
-            //System.out.println("Gelesenes Zeile: " +line);
+            System.out.println("Gelesenes Zeile: " +line);
 
             // 1. Split the words
             String[] lineWordList = line.split(" ");
@@ -42,7 +42,7 @@ public class DistinctWords {
 
         FileWriter out = new FileWriter("src/Fach_6_FileIO/myDirectory/songs-words-distinct.txt");
         for (String w : hashSet) {
-            System.out.println(w);
+            System.out.println("Distinct word: "+w);
             out.write(w+"\n") ;
         }
         out.close();
