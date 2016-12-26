@@ -1,4 +1,4 @@
-package Fach_3_Swing.ch.ibw.swing.MVC;
+package Fach_3_Swing.ch.ibw.swing.MVC.einfach;
 
 /**
  * Created by user on 26.12.2016.
@@ -16,6 +16,12 @@ public class Controller {
      * method actionPerformed() method linkBtnAndLabel() is called.
      * In linkBtnAndLabel() model's variable "x" increments and than "x"
      * sends to view's label to display changes.
+     *
+     * MVC helps to divide functionality between different objects, so program
+     * becomes more clear and understandable. The pattern allows to modify code
+     * (realization), that is encapsulated inside one of these classes without
+     * intrusion inside other classes code(of course you have to keep the same
+     * interfaces).
      */
 
     private Model model;

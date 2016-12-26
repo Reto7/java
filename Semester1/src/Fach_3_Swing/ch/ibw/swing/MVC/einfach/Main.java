@@ -1,4 +1,4 @@
-package Fach_3_Swing.ch.ibw.swing.MVC;
+package Fach_3_Swing.ch.ibw.swing.MVC.einfach;
 
 /**
  * Created by user on 26.12.2016.
