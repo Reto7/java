@@ -40,6 +40,7 @@ public class DistinctWords {
         }
         bufferedReader.close();
 
+        // 3. write distinct words in new file
         FileWriter out = new FileWriter("src/Fach_6_FileIO/myDirectory/songs-words-distinct.txt");
         for (String w : hashSet) {
             System.out.println("Distinct word: "+w);
