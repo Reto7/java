@@ -2,4 +2,5 @@ language: java
 sudo: false
 script:
   - cd Semester1
-  - mvn test
+# - mvn test
+  - mvn -DtestSourceDirectory=test test
