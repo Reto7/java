@@ -1,2 +1,2 @@
 # reto.kaufmann.java
-Hallo 
+Travis Status: https://travis-ci.org/ibwgr/reto.kaufmann.java.svg?branch=master 
