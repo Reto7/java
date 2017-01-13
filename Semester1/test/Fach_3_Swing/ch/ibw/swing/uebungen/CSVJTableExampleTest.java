@@ -1,5 +1,6 @@
 package Fach_3_Swing.ch.ibw.swing.uebungen;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
@@ -9,6 +10,7 @@ import javax.swing.table.TableModel;
 /**
  * Created by rk on 29.11.16.
  */
+@Ignore
 public class CSVJTableExampleTest {
     @Test
     public void parseCSVAndCreateTableModel() throws Exception {
