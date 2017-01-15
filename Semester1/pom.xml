@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ibw.serialize</groupId>
-    <artifactId>serializer</artifactId>
+    <groupId>Semester1</groupId>
+    <artifactId>semester1</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -31,39 +31,6 @@
     <build>
         
         <plugins>
-                <!--
-                <plugin>
-                 <groupId>org.codehaus.mojo</groupId>
-                 <artifactId>build-helper-maven-plugin</artifactId>
-                 <version>1.9.1</version>
-                 <executions>
-                   <execution>
-                     <id>add-test-source</id>
-                     <phase>generate-test-sources</phase>
-                     <goals>
-                       <goal>add-test-source</goal>
-                     </goals>
-                     <configuration>
-                       <sources>
-                         <source>test</source>
-                       </sources>
-                     </configuration>
-                   </execution>
-                 </executions>
-               </plugin>     
-                 
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <testSourceDirectory>${basedir}/test</testSourceDirectory>
-                    <testClassesDirectory>${project.build.directory}/target/test-classes</testClassesDirectory>
-                </configuration>
-            </plugin>                 
-            -->
-
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -71,28 +38,6 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>ReadFromUrl</mainClass>
-                        </manifest>
-                    </archive>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
-                        <phase>package</phase> <!-- bind to the packaging phase -->
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
         </plugins>
