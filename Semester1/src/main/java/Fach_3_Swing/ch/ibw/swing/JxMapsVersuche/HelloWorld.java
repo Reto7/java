@@ -1,14 +1,16 @@
 package Fach_3_Swing.ch.ibw.swing.JxMapsVersuche;
 
-/**
- * Created by user on 21.12.2016.
- */
+/*
 import com.teamdev.jxmaps.*;
 import com.teamdev.jxmaps.swing.MapView;
-
+*/
 import javax.swing.*;
 import java.awt.*;
 
+public class HelloWorld {
+
+
+/*
 public class HelloWorld extends MapView {
     public HelloWorld(MapViewOptions options) {
         super(options);
@@ -55,4 +57,7 @@ public class HelloWorld extends MapView {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
+
+*/
 }
+
