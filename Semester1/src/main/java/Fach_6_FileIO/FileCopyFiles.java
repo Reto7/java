@@ -12,8 +12,8 @@ public class FileCopyFiles {
         // dieses klasse ab java8 benuetzt man zum kopieren!
         // ist viel einfacher
 
-        Path src = Paths.get("src/Fach_6_FileIO/myDirectory/songs.txt");
-        Path dst = Paths.get("src/Fach_6_FileIO/myDirectory/songs-copy2.txt");
+        Path src = Paths.get("src/main/java/Fach_6_FileIO/myDirectory/songs.txt");
+        Path dst = Paths.get("src/main/java/Fach_6_FileIO/myDirectory/songs-copy2.txt");
         Files.copy(src, dst, StandardCopyOption.REPLACE_EXISTING);
     }
 }

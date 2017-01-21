@@ -1,15 +1,16 @@
 package Fach_6_FileIO;
 
 import java.io.File;
-public class FileTest {
+public class DirectoryListing {
     public static void main(String[] args) {
 
 
         // dynamisch je nach PC/Server das aktuelle Verzeichnis ermitteln
-        //Thread.currentThread().getContextClassLoader().getResourceAsStream();
+        // Thread.currentThread().getContextClassLoader().getResourceAsStream();
+        // siehe FileLocationDynamischAuffinden.java
         
         // Create file object for directory
-        File directory = new File("src/Fach_6_FileIO/myDirectory");
+        File directory = new File("src/main/java/Fach_6_FileIO/myDirectory");
         System.out.println("Is Directory: "+directory.isDirectory()
                 + ", absolute path: "+directory.getAbsolutePath());
 

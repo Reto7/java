@@ -6,35 +6,49 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- * Created by rk on 22.12.16.
+ * TODO, das funktioniert nicht mehr. Weshalb hat's auf dem Notebook zuvor funtioniert, aber nicht auf dem Win PC?
  */
 public class FileLocationDynamischAuffinden {
 
     // vorteil: schneller und man kann zeilenweise mit readLine() vorgehen!
-
-    public static void main(String[] args) throws IOException {
+    public void fileHandling() throws Exception {
 
         // diese struktur soll dynamisch aufgefunden werden, ist relativ zum AKTUELLEN Verzeichnis DIESER KLASSE!
-        String sollLocation = "myDirectory/Wortliste.txt";
+        //String sollLocation = "myDirectory/Wortliste.txt";
+        String sollLocation = "WortlisteNEU.txt";
+        System.out.println("soll location: " +sollLocation);
 
         //InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(sollLocation);
         //System.out.println(inputStream.toString());
 
+        //InputStream inputStream2 = this.getClass().getClassLoader().getResourceAsStream(sollLocation);
+        //InputStream inputStream2 = this.getClass().getResourceAsStream(sollLocation);
+        //InputStream inputStream2 = Thread.currentThread().getContextClassLoader().getResourceAsStream(sollLocation);
+        //InputStream inputStream2 = FileLocationDynamischAuffinden.class.getClass().getResourceAsStream(sollLocation);
         InputStream inputStream2 = FileLocationDynamischAuffinden.class.getResourceAsStream(sollLocation);
-        System.out.println(inputStream2);
+        System.out.println("inputstream2: " +inputStream2);
 
 
         //File inputFile = new File("src/Fach_6_FileIO/myDirectory/Wortliste.txt");
         //BufferedReader bufferedReader = new BufferedReader(new FileReader(inputFile));
 
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream2));
+        if (inputStream2 != null) {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream2));
 
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            System.out.println("Gelesenes Zeile: " +line);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println("Gelesenes Zeile: " + line);
+            }
+            bufferedReader.close();
+        } else {
+            throw new Exception("location not found");
         }
-        bufferedReader.close();
+    }
 
+    // Wir sind die eigene "Test Klasse"
+    public static void main(String[] args) throws Exception {
+            FileLocationDynamischAuffinden x = new FileLocationDynamischAuffinden();
+            x.fileHandling();
 
     }
 }

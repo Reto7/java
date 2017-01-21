@@ -17,7 +17,7 @@ public class DistinctWords {
     public static void main(String[] args) throws IOException {
 
 
-        File inputFile = new File("src/Fach_6_FileIO/myDirectory/Wortliste.txt");
+        File inputFile = new File("src/main/java/Fach_6_FileIO/myDirectory/Wortliste.txt");
         BufferedReader bufferedReader = new BufferedReader(new FileReader(inputFile));
 
         HashSet<String> hashSet = new HashSet<String>();
@@ -41,7 +41,7 @@ public class DistinctWords {
         bufferedReader.close();
 
         // 3. write distinct words in new file
-        FileWriter out = new FileWriter("src/Fach_6_FileIO/myDirectory/songs-words-distinct.txt");
+        FileWriter out = new FileWriter("src/main/java/Fach_6_FileIO/myDirectory/songs-words-distinct.txt");
         for (String w : hashSet) {
             System.out.println("Distinct word: "+w);
             out.write(w+"\n") ;

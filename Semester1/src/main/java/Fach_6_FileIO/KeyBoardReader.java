@@ -17,7 +17,7 @@ public class KeyBoardReader {
         // java KeyBoardReader P1 P2
         System.out.println("Parameter1: " +args[0]);
 
-        File outputFile = new File("src/Fach_6_FileIO/myDirectory/"+args[0]);
+        File outputFile = new File("src/main/java/Fach_6_FileIO/myDirectory/"+args[0]);
         Writer fileWriter = new FileWriter(outputFile);
         Reader keyboardReader = new InputStreamReader(System.in);
 
