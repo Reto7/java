@@ -40,6 +40,7 @@ public class GUI extends JFrame {
         JTable table = new JTable();
 
         AbteilungController ac = new AbteilungController();
+        System.out.println("abteilungsliste: " +ac.getAbteilungsListe().size());
 
         DefaultTableModel model = new DefaultTableModel();
         table.setModel(model);

@@ -11,6 +11,14 @@ import java.util.ArrayList;
  */
 public class AbteilungController {
 
+    public AbteilungController() {
+        try {
+            readAll();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     ArrayList<AbteilungTO> abteilungsListe = new ArrayList<AbteilungTO>();
 
     public ArrayList<AbteilungTO> getAbteilungsListe() {
