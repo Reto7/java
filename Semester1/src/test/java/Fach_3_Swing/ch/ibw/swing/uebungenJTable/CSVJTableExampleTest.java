@@ -1,4 +1,4 @@
-package Fach_3_Swing.ch.ibw.swing.uebungen;
+package Fach_3_Swing.ch.ibw.swing.uebungenJTable;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -15,7 +15,7 @@ public class CSVJTableExampleTest {
     @Test
     public void parseCSVAndCreateTableModel() throws Exception {
         CSVJTableExample x = new CSVJTableExample();
-        TableModel t = x.parseCSVAndCreateTableModel(new File("/home/rk/IntelliJ-Workspace/Semester1/src/Fach_3_Swing/ch/ibw/swing/uebungen/daten.csv"));
+        TableModel t = x.parseCSVAndCreateTableModel(new File("/home/rk/IntelliJ-Workspace/Semester1/src/Fach_3_Swing/ch/ibw/swing/uebungenJTable/daten.csv"));
     }
 
 }

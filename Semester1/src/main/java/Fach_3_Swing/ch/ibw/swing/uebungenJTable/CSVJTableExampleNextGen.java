@@ -1,4 +1,4 @@
-package Fach_3_Swing.ch.ibw.swing.uebungen;
+package Fach_3_Swing.ch.ibw.swing.uebungenJTable;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -34,7 +34,7 @@ public class CSVJTableExampleNextGen extends JFrame {
             @Override
             public void actionPerformed(final ActionEvent e)
             {
-              //f = new File ("/home/rk/IntelliJ-Workspace/Semester1/src/Fach_3_Swing/ch/ibw/swing/uebungen/daten.csv");
+              //f = new File ("/home/rk/IntelliJ-Workspace/Semester1/src/Fach_3_Swing/ch/ibw/swing/uebungenJTable/daten.csv");
                 f = getFile();
                 TableModel model = parseCSVAndCreateTableModel(f);
                 table.setModel(model);

@@ -1,4 +1,4 @@
-package Fach_3_Swing.ch.ibw.swing.uebungen;
+package Fach_3_Swing.ch.ibw.swing.uebungenJTable;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
