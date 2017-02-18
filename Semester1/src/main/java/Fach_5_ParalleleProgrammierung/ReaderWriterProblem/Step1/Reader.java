@@ -1,5 +1,7 @@
 import java.util.Random;
 
+import Fach_5_ParalleleProgrammierung.ReaderWriterProblem.Step1.Data;
+
 public class Reader extends Thread {
 	Data data;
 	int sleepTime;
@@ -7,6 +9,7 @@ public class Reader extends Thread {
 		this.data = data;
 		this.sleepTime = sleepTime;
 	}
+	/*
 	public void run() {
 		Random random = new Random();
 		while (true) {
@@ -27,4 +30,5 @@ public class Reader extends Thread {
 			}
 		}
 	}
+	*/
 }

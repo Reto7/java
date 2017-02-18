@@ -1,5 +1,7 @@
 import java.util.Random;
 
+import Fach_5_ParalleleProgrammierung.ReaderWriterProblem.Step1.Data;
+
 public class Writer extends Thread {
 	Data data;
 	int sleepTime;

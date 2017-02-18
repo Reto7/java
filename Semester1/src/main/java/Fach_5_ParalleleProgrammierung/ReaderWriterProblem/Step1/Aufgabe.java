@@ -1,3 +1,5 @@
+import Fach_5_ParalleleProgrammierung.ReaderWriterProblem.Step2.Data;
+
 public class Aufgabe {
 
 	public static void main(String[] args) {
