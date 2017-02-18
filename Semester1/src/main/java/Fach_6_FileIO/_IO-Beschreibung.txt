@@ -1,0 +1,15 @@
+2 Arten von Streams
+ Input-Streams: Schreiben von Daten (Characters oder Binary Daten)
+ Output-Streams: Lesen von Daten (Characters oder Binary Daten)
+
+FileInputStream/FileOutputStream mittels BINARY COPY
+wenn man CHARACTER COPY machen moechte, dann muesste man
+den FileReader/FileWriter anstatt FileInputStream/FileOutputStream verwenden
+
+Klasse File fuer Dateien ODER Verzeichnisse
+
+BUFFERED READER / WRITE
+Spezielle Reader/Writer Klassen, welche grosse Schreib/Lese-Zugriffen
+mittels Puffering der Daten optimieren
+ public BufferedReader(Reader in) erzeugt einen gepufferten Zeichen-Eingabe-Strom
+ public BufferedWriter(Writer out) erzeugt einen gepufferten Zeichen-Ausgabe-Strom
