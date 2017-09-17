@@ -1,4 +1,4 @@
-import Fach_5_ParalleleProgrammierung.ReaderWriterProblem.Step2.Data;
+package Fach_5_ParalleleProgrammierung.ReaderWriterProblem.Step1;
 
 public class Aufgabe {
 

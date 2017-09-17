@@ -1,6 +1,6 @@
-import java.util.Random;
+package Fach_5_ParalleleProgrammierung.ReaderWriterProblem.Step1;
 
-import Fach_5_ParalleleProgrammierung.ReaderWriterProblem.Step1.Data;
+import java.util.Random;
 
 public class Writer extends Thread {
 	Data data;
