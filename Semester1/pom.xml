@@ -114,6 +114,13 @@
             <version>3.5.3</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.borland.silk.keyworddriven</groupId>
+            <artifactId>keyworddriven</artifactId>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/com.borland.silk.keyworddriven.jar</systemPath>
+        </dependency>
+
     </dependencies>
 
     <build>
