@@ -1,7 +1,7 @@
 package TestautomatisierungKeywords;
 
-import com.borland.silk.keyworddriven.annotations.Argument;
-import com.borland.silk.keyworddriven.annotations.Keyword;
+//import com.borland.silk.keyworddriven.annotations.Argument;
+//import com.borland.silk.keyworddriven.annotations.Keyword;
 
 public class Keywords {
 
@@ -15,10 +15,10 @@ public class Keywords {
   // - öffne dialog
   // - erstelle parkbewilligung
   // - überprüfe pdf beleg
-  @Keyword("Login auf Webseite")
-  public void myKeyword(@Argument("Benutzername") String userNameX) {
 
-    System.out.println(userNameX); // dies hier ist dann der effektive Test, z.B. Selenium. Hier im Beispiel einfach SOUT
-
-  }
+  //@Keyword("Login auf Webseite")
+  //public void myKeyword(@Argument("Benutzername") String userNameX) {
+  //
+  //  System.out.println(userNameX); // dies hier ist dann der effektive Test, z.B. Selenium. Hier im Beispiel einfach SOUT
+  //}
 }

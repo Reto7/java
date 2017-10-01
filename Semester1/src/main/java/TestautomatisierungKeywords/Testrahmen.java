@@ -7,6 +7,6 @@ public class Testrahmen {
 
     public static void main(String[] args) {
         Keywords k = new Keywords();
-        k.myKeyword("Onkel Fritz");
+      //  k.myKeyword("Onkel Fritz");
     }
 }
