@@ -1,4 +1,4 @@
-package Fach_2_Objektorientierung.A90_Interfaces_Delegate_Pattern;
+package Fach_2_Objektorientierung.A90_Interfaces_Delegate_Strategy_Pattern;
 
 /**
  * http://www.programmierenlernenhq.de/einfuehrung-in-java-design-patterns-software-entwurfsmuster/

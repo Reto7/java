@@ -1,6 +1,4 @@
-package Fach_2_Objektorientierung.A90_Interfaces_Delegate_Pattern;
-
-import org.junit.Test;
+package Fach_2_Objektorientierung.A90_Interfaces_Delegate_Strategy_Pattern;
 
 /**
  * http://www.programmierenlernenhq.de/einfuehrung-in-java-design-patterns-software-entwurfsmuster/
@@ -10,16 +8,9 @@ import org.junit.Test;
  * Es muss weder Printer noch Printable angepasst werden
  * -----------------------------------------------------------------------------
  */
-public class DelegateTest
+interface Printable
 {
-    @Test
-    public void printerTest()
-    {
-        // ein BlackWhitePrinter
-        Printer myPrinter = new Printer();
-        myPrinter.print();
-        // ein ColorPrinter
-        myPrinter.switchTo(new ColorPrinter());
-        myPrinter.print();
-    }
+    // alle Methoden in Interfaces sind implizit public und abstract
+    // man könnte auch schreiben: "public abstract void print();"
+    void print();
 }
