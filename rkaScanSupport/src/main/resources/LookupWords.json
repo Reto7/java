@@ -1,0 +1,5 @@
+[
+  {"zielKategorie":"Versicherung" , "zielName":"AXA"      , "w1":"xxxxxxxxxxxxxxxxxxxxxxxxxxxx", "w2":"localhost", "w3":"yes" , "w4":""      }
+ ,{"zielKategorie":"Versicherung" , "zielName":"Allianz"  , "w1":"WealthAdvisoryCreateCaseTest", "w2":"localhost", "w3":"yes" , "w4":""      }
+ ,{"zielKategorie":"Test"         , "zielName":"Reto"     , "w1":"WealthAdvisoryCreateCaseTest", "w2":"CH"       , "w3":"no"  , "w4":""      }
+ ]
