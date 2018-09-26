@@ -1,4 +1,4 @@
-package Fach_2_Objektorientierung.A90_Interfaces_Delegate_Pattern;
+package Fach_2_Objektorientierung.A90_Interfaces_Delegate_Strategy_Pattern;
 
 /**
  * http://www.programmierenlernenhq.de/einfuehrung-in-java-design-patterns-software-entwurfsmuster/
@@ -8,9 +8,10 @@ package Fach_2_Objektorientierung.A90_Interfaces_Delegate_Pattern;
  * Es muss weder Printer noch Printable angepasst werden
  * -----------------------------------------------------------------------------
  */
-interface Printable
+public class BlackWhitePrinter implements Printable // Delegate
 {
-    // alle Methoden in Interfaces sind implizit public und abstract
-    // man könnte auch schreiben: "public abstract void print();"
-    void print();
+    public void print()
+    {
+        System.out.println("BlackWhitePrinter prints!");
+    }
 }
