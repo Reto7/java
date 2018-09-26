@@ -8,8 +8,9 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>postgres</user-name>
-      <introspection-scope>byceco:pg_catalog,postgres,public</introspection-scope>
+      <introspection-schemas>byceco:pg_catalog,postgres,public</introspection-schemas>
       <resolve-scope>byceco:postgres,public</resolve-scope>
+      <unqualified-resolve-schemas>byceco:postgres,public</unqualified-resolve-schemas>
     </data-source>
   </component>
 </project>
