@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ReadPdfAndLookupInDictionary {
 
-    public static void main(String[] args) throws IOException {
+    public void start() throws IOException {
 
         List<String> pdfWordList = new ArrayList<String>();
 
@@ -45,15 +45,28 @@ public class ReadPdfAndLookupInDictionary {
         }
         System.out.println("*** Count number of strings that match in two arrays in Java ***");
         System.out.println("Array word size: "+pdfWordList.size());
-        List<String> findWordList = new ArrayList<String>();
-        findWordList.add("Reto");
-        findWordList.add("Kaufmann");
-        int countWordMatches = countMatch(findWordList, pdfWordList);
-        System.out.println("Words matching: " +countWordMatches);
+
+        // lookup daten lesen
+        List<LookupWordsTO> lookupWordsTOList = LookupWords.buildFromFile();
+        for (LookupWordsTO lookupWordsTO : lookupWordsTOList) {
+            System.out.println(lookupWordsTO.toString());
+            int lookupWordList = lookupWordsTO.getWordList().size();
+            System.out.println("Wordlist size: "+ lookupWordList);
+
+            int countWordMatches = countMatch(lookupWordsTO.getWordList(), pdfWordList);
+            System.out.println("Words matching: " +countWordMatches);
+
+            if (lookupWordList == countWordMatches) {
+                System.out.println("--> Full Match!");  // TODO jetzt feld 1 und 2 fuer rename verwenden!
+                return;
+            }
+
+        }
+
 
     }
 
-    public static int countMatch(List<String> list1,List<String> list2) {
+    public int countMatch(List<String> list1,List<String> list2) {
         //List<String> list1 = new ArrayList(Arrays.asList(a));
         //List<String> list2 = Arrays.asList(b);
         list1.retainAll(list2);

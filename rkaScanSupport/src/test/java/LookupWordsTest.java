@@ -3,16 +3,16 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class TestDataUnitWealthAdvisoryTest {
+public class LookupWordsTest {
 
-//    private static final Logger logger = LoggerFactory.getLogger(TestDataUnitWealthAdvisoryTest.class);
+//    private static final Logger logger = LoggerFactory.getLogger(LookupWordsTest.class);
 
     private LookupWords LookupWords = new LookupWords();
 
 
     @Test(groups = "Unit")
     public void testJsonToJavaBeanConvertionShouldCreateInstances(){
-        List<LookupWordsTO> lookupWordsTOList = LookupWords.buildFromFile("LookupWords.json");
+        List<LookupWordsTO> lookupWordsTOList = LookupWords.buildFromFile();
         Integer numberOfTestDataObjects = lookupWordsTOList.size();
         System.out.println("Unit Testing the Tests: Number of Testdata: " +numberOfTestDataObjects);
         Assert.assertTrue(numberOfTestDataObjects > 2);

@@ -57,14 +57,14 @@ public class LookupWordsTO {
     }
 
     public List<String> getWordList(){
-        List<String> wordList = new ArrayList<String>();
-        if (w1 != null)
+        List<String> wordList = new ArrayList<>();
+        if (w1.length() >1)
             wordList.add(w1);
-        if (w2 != null)
+        if (w2.length() >1)
             wordList.add(w2);
-        if (w3 != null)
+        if (w3.length() >1)
             wordList.add(w3);
-        if (w4 != null)
+        if (w4.length() >1)
             wordList.add(w4);
         return wordList;
     }
