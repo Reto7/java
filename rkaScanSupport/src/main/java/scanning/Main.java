@@ -14,9 +14,10 @@ public class Main {
 
     public static final List<LookupWordsTO> LOOKUP_WORDS_LIST = LookupWords.buildFromFile();
 
+
     public static void main(String[] args) throws IOException {
 
-        String filename = "H:\\Dropbox\\___temp_SCAN\\Ohne Titel_b.pdf";
+        String filename = "H:\\Dropbox\\___temp_SCAN\\Ohne Titel_b.pdf";  // TODO LOOP, alles ohne *_PDF.pdf
 
         PdfDatei pdfDatei = new PdfDatei(filename);
         Scanning s = new Scanning();
@@ -38,7 +39,7 @@ public class Main {
 
         String path = new File(filename).getParent();
         //System.out.println("path "+ path);
-        s.renameFile(filename,path+"/"+newFilename);
+        //s.renameFile(filename,path+"/"+newFilename);
 
     }
 

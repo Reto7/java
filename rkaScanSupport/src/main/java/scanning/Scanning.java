@@ -9,13 +9,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import java.nio.file.StandardCopyOption;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.time.format.FormatStyle;
+import java.util.*;
 
 public class Scanning {
 
@@ -39,8 +37,9 @@ public class Scanning {
 
     public String getFileNamePartByDateLookup(String pdfText) {
         try {
-            return getNewestDateFromString(pdfText);
+            return getRelevantDateFromString(pdfText);
         } catch (Exception e) {
+            e.printStackTrace();
             return "XXXX_XX_XX";
         }
     }
@@ -52,7 +51,7 @@ public class Scanning {
         return list1.size();
     }
 
-    public String getNewestDateFromString(String input) {
+    public String getRelevantDateFromString(String input) {
       //String input = "coming from the 01.12.1988 to the 12.01.2000";
         String[] elements = input.split(" ");
         DateTimeFormatter f = DateTimeFormatter.ofPattern("dd.MM.yyyy");
@@ -65,7 +64,19 @@ public class Scanning {
                 // Ignore the exception. Move on to next element.
             }
         }
-        Collections.sort(dates, Collections.reverseOrder());
+        //Collections.sort(dates, Collections.reverseOrder());
+        LocalDate xmin = LocalDate.parse("2010-01-01"); //default, ISO_LOCAL_DATE
+        logger.debug("XMIN: " +xmin);
+//        for (LocalDate d : dates){
+//            if (d.isBefore(xmin))
+//                dates.remove(d);
+//        }
+        for(int i=0;i<dates.size();i++)  {
+            logger.debug(String.valueOf(dates.get(i)));
+            if (dates.get(i).isBefore(xmin))
+               dates.remove(i);  // TODO hier weiter
+        }
+        Collections.sort(dates);
         //System.out.println(dates);
         //System.out.println(dates.get(0));
         return String.valueOf(dates.get(0)).replace("-","_");
