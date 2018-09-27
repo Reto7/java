@@ -1,6 +1,10 @@
+package scanning;
+
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.pdfbox.text.PDFTextStripperByArea;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadPdfAndLookupInDictionary {
+
+    private static final Logger logger = LoggerFactory.getLogger(ReadPdfAndLookupInDictionary.class);
 
     public void start() throws IOException {
 
@@ -27,16 +33,16 @@ public class ReadPdfAndLookupInDictionary {
                 PDFTextStripper tStripper = new PDFTextStripper();
 
                 String pdfFileInText = tStripper.getText(document);
-                //System.out.println("Text:" + st);
+                //logger.debug("Text:" + st);
 
                 // split by whitespace
                 String lines[] = pdfFileInText.split("\\r?\\n");
                 for (String line : lines) {
-//                    System.out.println(line);
+//                    logger.debug(line);
 
                     String[] pdfWortListe = line.split(" ");
                     for ( String pdfWort : pdfWortListe) {
-                        System.out.println(pdfWort);
+                        logger.debug(pdfWort);
                         pdfWordList.add(pdfWort);
                     }
                 }
@@ -44,21 +50,21 @@ public class ReadPdfAndLookupInDictionary {
             }
 
         }
-        System.out.println("*** Count number of strings that match in two arrays in Java ***");
-        System.out.println("Array word size: "+pdfWordList.size());
+        logger.debug("*** Count number of strings that match in two arrays in Java ***");
+        logger.debug("Array word size: "+pdfWordList.size());
 
         // lookup daten lesen
         List<LookupWordsTO> lookupWordsTOList = LookupWords.buildFromFile();
         for (LookupWordsTO lookupWordsTO : lookupWordsTOList) {
-            System.out.println(lookupWordsTO.toString());
+            logger.debug(lookupWordsTO.toString());
             int lookupWordList = lookupWordsTO.getWordList().size();
-            System.out.println("LookupWordlist size: "+ lookupWordList);
+            logger.debug("LookupWordlist size: "+ lookupWordList);
 
             int countWordMatches = countMatch(lookupWordsTO.getWordList(), pdfWordList);
-            System.out.println("Words matching: " +countWordMatches);
+            logger.debug("Words matching: " +countWordMatches);
 
             if (lookupWordList == countWordMatches) {
-                System.out.println("--> Full Match!");  // TODO jetzt feld 1 und 2 fuer rename verwenden!
+                logger.debug("--> Full Match!");  // TODO jetzt feld 1 und 2 fuer rename verwenden!
                 return;
             }
 

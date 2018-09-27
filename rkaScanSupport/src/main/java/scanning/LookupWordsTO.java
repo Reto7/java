@@ -1,3 +1,8 @@
+package scanning;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -11,7 +16,7 @@ import javax.validation.constraints.NotNull;
 
 public class LookupWordsTO {
 
-  //private static final Logger logger = LoggerFactory.getLogger(WealthAdvisoryTestDataTO.class);
+    private static final Logger logger = LoggerFactory.getLogger(LookupWordsTO.class);
 
     @NotNull(message = "Test-Data (JSON) field cannot be null: zielKategorie")
     String zielKategorie;
@@ -92,7 +97,7 @@ public class LookupWordsTO {
                 sb.append(violation.getMessage());
                 sb.append(System.getProperty("line.separator"));
             }
-            System.out.println(sb.toString());
+            logger.debug(sb.toString());
             throw new ValidationException("ERROR on test data: " + String.valueOf(sb));
         }
     }

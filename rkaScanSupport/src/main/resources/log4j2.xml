@@ -4,20 +4,11 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36}.%M %msg%n"/>
         </Console>
-        <File name="SeleniumOutputLogFile" fileName="./target/output/${date:yyyyMMdd_HHmmss}_Selenium_Output_Logfile.log">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36}.%M %msg%n"/>
-        </File>
     </Appenders>
     <Loggers>
-        <Logger name="com.lgt.wa" level="debug">
+        <Logger name="scanning" level="debug">
             <AppenderRef ref="Console" level="debug"/>
-            <AppenderRef ref="SeleniumOutputLogFile" level="debug"/>
         </Logger>
-        <!-- das hier funktioniert leider nicht, ist nun explizit in der WebDriverManager Klasse ausgeschalten
-        <Logger name="org.openqa.selenium.remote" level="OFF">
-            <AppenderRef ref="Console" level="OFF"/>
-        </Logger>
-        -->
         <Root level="error">
             <!-- Hinweis: hier kein Appender verwenden, es wird sonst alles doppelt geloggt -->
             <!-- <AppenderRef ref="Console"/> -->
