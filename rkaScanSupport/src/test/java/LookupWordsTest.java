@@ -20,7 +20,7 @@ public class LookupWordsTest {
         //
         for (LookupWordsTO lookupWordsTO : lookupWordsTOList) {
             System.out.println(lookupWordsTO.toString());
-            System.out.println("Wordlist size: "+lookupWordsTO.getWordList().size());
+          //  System.out.println("Wordlist size: "+lookupWordsTO.getWordList().size());
         }
     }
 

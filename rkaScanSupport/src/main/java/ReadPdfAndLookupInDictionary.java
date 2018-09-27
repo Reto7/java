@@ -14,7 +14,8 @@ public class ReadPdfAndLookupInDictionary {
         List<String> pdfWordList = new ArrayList<String>();
 
 
-        try (PDDocument document = PDDocument.load(new File("/home/rk/Dropbox/___temp_SCAN/Ohne Titel_b.pdf"))) {
+        //try (PDDocument document = PDDocument.load(new File("/home/rk/Dropbox/___temp_SCAN/Ohne Titel_b.pdf"))) {
+        try (PDDocument document = PDDocument.load(new File("H:\\Dropbox\\___temp_SCAN\\Ohne Titel_b.pdf"))) {
 
             document.getClass();
 
@@ -33,10 +34,10 @@ public class ReadPdfAndLookupInDictionary {
                 for (String line : lines) {
 //                    System.out.println(line);
 
-                    String[] arr = line.split(" ");
-                    for ( String ss : arr) {
-                        System.out.println(ss);
-                        pdfWordList.add(ss);
+                    String[] pdfWortListe = line.split(" ");
+                    for ( String pdfWort : pdfWortListe) {
+                        System.out.println(pdfWort);
+                        pdfWordList.add(pdfWort);
                     }
                 }
 
@@ -51,7 +52,7 @@ public class ReadPdfAndLookupInDictionary {
         for (LookupWordsTO lookupWordsTO : lookupWordsTOList) {
             System.out.println(lookupWordsTO.toString());
             int lookupWordList = lookupWordsTO.getWordList().size();
-            System.out.println("Wordlist size: "+ lookupWordList);
+            System.out.println("LookupWordlist size: "+ lookupWordList);
 
             int countWordMatches = countMatch(lookupWordsTO.getWordList(), pdfWordList);
             System.out.println("Words matching: " +countWordMatches);
