@@ -16,47 +16,57 @@ public class PdfDatei {
 
     private static final Logger logger = LoggerFactory.getLogger(PdfDatei.class);
     private String pdfFileName;
+    private String pdfTextInhalt;
 
     public PdfDatei(String pdfFileName) {
         this.pdfFileName = pdfFileName;
+        try {
+            this.pdfTextInhalt = getPdfText();
+        } catch (IOException e) {
+        }
+    }
+
+    public String getPdfText() throws IOException {
+        logger.info("");
+        if (this.pdfTextInhalt == null) {
+            String pdfFileTextInhalt = "";
+            try (PDDocument document = PDDocument.load(new File(this.pdfFileName))) {
+                document.getClass();
+                if (!document.isEncrypted()) {
+                    PDFTextStripperByArea stripper = new PDFTextStripperByArea();
+                    stripper.setSortByPosition(true);
+                    PDFTextStripper tStripper = new PDFTextStripper();
+                    pdfFileTextInhalt = tStripper.getText(document);
+                    //logger.debug("Text:" + st);
+                    document.close();
+                }
+            }
+            this.pdfTextInhalt = pdfFileTextInhalt;
+        }
+        return this.pdfTextInhalt;
     }
 
     public List<String> getWortListe() throws IOException {
         logger.info("");
         List<String> pdfWordListAlle = new ArrayList<String>();
+        String pdfFileInText = this.pdfTextInhalt;
+        splitTextIntoWordList(pdfWordListAlle, pdfFileInText);
+        logger.debug("PDF Datei Wortliste: " +pdfWordListAlle.size());
+        return pdfWordListAlle;
+    }
 
-        //try (PDDocument document = PDDocument.load(new File("/home/rk/Dropbox/___temp_SCAN/Ohne Titel_b.pdf"))) {
-        try (PDDocument document = PDDocument.load(new File(this.pdfFileName))) {
-
-            document.getClass();
-
-            if (!document.isEncrypted()) {
-
-                PDFTextStripperByArea stripper = new PDFTextStripperByArea();
-                stripper.setSortByPosition(true);
-
-                PDFTextStripper tStripper = new PDFTextStripper();
-
-                String pdfFileInText = tStripper.getText(document);
-                //logger.debug("Text:" + st);
-
-                // split by whitespace
-                String lines[] = pdfFileInText.split("\\r?\\n");
-                for (String line : lines) {
-                 // logger.debug(line);
-                    List<String> pdfWortListe = Arrays.asList(line.split(" "));
-                    for ( String pdfWort : pdfWortListe) {
-                        logger.debug(pdfWort);
-                        pdfWordListAlle.add(pdfWort);
-                    }
-
-                }
-
+    private void splitTextIntoWordList(List<String> pdfWordListAlle, String pdfFileInText) {
+        // split by whitespace
+        String lines[] = pdfFileInText.split("\\r?\\n");
+        for (String line : lines) {
+         // logger.debug(line);
+            List<String> pdfWortListe = Arrays.asList(line.split(" "));
+            for ( String pdfWort : pdfWortListe) {
+             // logger.debug(pdfWort); // TODO ENABLE FUER DEBUG
+                pdfWordListAlle.add(pdfWort);
             }
 
         }
-        logger.debug("PDF Datei Wortliste: " +pdfWordListAlle.size());
-        return pdfWordListAlle;
     }
 
 }

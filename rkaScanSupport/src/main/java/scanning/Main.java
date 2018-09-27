@@ -3,7 +3,9 @@ package scanning;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.List;
 
 public class Main {
@@ -18,12 +20,26 @@ public class Main {
 
         PdfDatei pdfDatei = new PdfDatei(filename);
         Scanning s = new Scanning();
-        String newFileNamePart = s.wordMatch(pdfDatei.getWortListe(), LOOKUP_WORDS_LIST);
-        logger.info("New Filename Part: " +newFileNamePart);
 
-//
-//        ReadPdfAndLookupInDictionary r = new ReadPdfAndLookupInDictionary();
-//        r.start();
+        String newFileNamePartByWordLookupMatch = null;
+        try {
+            newFileNamePartByWordLookupMatch = s.getFileNamePartByWordLookupMatch(pdfDatei.getWortListe(), LOOKUP_WORDS_LIST);
+            logger.info("newFileNamePartByWordLookupMatch: " +newFileNamePartByWordLookupMatch);
+        } catch (NoMatchingLookupWordsException e) {
+            logger.info("newFileNamePartByWordLookupMatch No Matchup");
+        }
+
+        String newFileNamePartByDateLookup = null;
+        newFileNamePartByDateLookup = s.getFileNamePartByDateLookup(pdfDatei.getPdfText());
+        logger.info("newFileNamePartByDateLookup: " +newFileNamePartByDateLookup);
+
+        String newFilename = newFileNamePartByDateLookup + "_" +newFileNamePartByWordLookupMatch +"_PDF.pdf";
+        logger.info("NEW FILENAME: " +newFilename);
+
+        String path = new File(filename).getParent();
+        //System.out.println("path "+ path);
+        s.renameFile(filename,path+"/"+newFilename);
+
     }
 
 }

@@ -14,7 +14,7 @@ public class LookupWordsTest {
     private LookupWords LookupWords = new LookupWords();
 
 
-    @Test(groups = "Unit")
+    @Test
     public void testJsonToJavaBeanConvertionShouldCreateInstances(){
         List<LookupWordsTO> lookupWordsTOList = LookupWords.buildFromFile();
         Integer numberOfTestDataObjects = lookupWordsTOList.size();
