@@ -20,8 +20,8 @@ public class ReadPdfAndLookupInDictionary {
         List<String> pdfWordList = new ArrayList<String>();
 
 
-        //try (PDDocument document = PDDocument.load(new File("/home/rk/Dropbox/___temp_SCAN/Ohne Titel_b.pdf"))) {
-        try (PDDocument document = PDDocument.load(new File("H:\\Dropbox\\___temp_SCAN\\Ohne Titel_b.pdf"))) {
+        try (PDDocument document = PDDocument.load(new File("/home/rk/Dropbox/___temp_SCAN/Ohne Titel_b.pdf"))) {
+        //try (PDDocument document = PDDocument.load(new File("H:\\Dropbox\\___temp_SCAN\\Ohne Titel_b.pdf"))) {
 
             document.getClass();
 

@@ -7,13 +7,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.time.format.FormatStyle;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.ListIterator;
 
 public class Scanning {
 
@@ -39,7 +40,7 @@ public class Scanning {
         try {
             return getRelevantDateFromString(pdfText);
         } catch (Exception e) {
-            e.printStackTrace();
+           // e.printStackTrace();
             return "XXXX_XX_XX";
         }
     }
@@ -66,20 +67,24 @@ public class Scanning {
         }
         //Collections.sort(dates, Collections.reverseOrder());
         LocalDate xmin = LocalDate.parse("2010-01-01"); //default, ISO_LOCAL_DATE
-        logger.debug("XMIN: " +xmin);
-//        for (LocalDate d : dates){
-//            if (d.isBefore(xmin))
-//                dates.remove(d);
-//        }
-        for(int i=0;i<dates.size();i++)  {
-            logger.debug(String.valueOf(dates.get(i)));
-            if (dates.get(i).isBefore(xmin))
-               dates.remove(i);  // TODO hier weiter
+        //logger.debug("XMIN: " +xmin);
+        //logger.debug("Anzahl Datum: " +dates.size());
+        for (ListIterator<LocalDate> iter = dates.listIterator(); iter.hasNext(); ) {
+            LocalDate datum = iter.next();
+            if (datum.isBefore(xmin)) {
+                logger.debug("delete");
+                iter.remove();
+            }
         }
+        //logger.debug("Anzahl Datum: " +dates.size());
         Collections.sort(dates);
         //System.out.println(dates);
-        //System.out.println(dates.get(0));
-        return String.valueOf(dates.get(0)).replace("-","_");
+        if (dates.size() >0) {
+            System.out.println(dates.get(0));
+            return String.valueOf(dates.get(0)).replace("-", "_");
+        } else {
+            return null;
+        }
     }
 
     public void renameFile(String oldNameAndPath, String newNameAndPath) {

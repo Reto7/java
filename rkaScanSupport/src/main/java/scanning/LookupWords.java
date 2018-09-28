@@ -51,9 +51,8 @@ public class LookupWords {
 
     private static String getFile() throws IOException {
         logger.info("");
-        // TODO auf h:
-     //   Scanner in = new Scanner(new FileReader("/home/rk/IntelliJ-Workspace/rkaScanSupport/src/main/resources/LookupWords.json"));
-        Scanner in = new Scanner(new FileReader("H:\\Dropbox\\Scan_Source\\LookupWords.json"));
+     // Scanner in = new Scanner(new FileReader("H:\\Dropbox\\Scan_Source\\LookupWords.json"));
+        Scanner in = new Scanner(new FileReader("/home/rk/Dropbox/Scan_Source/LookupWords.json"));
         StringBuilder sb = new StringBuilder();
         while(in.hasNext()) {
             sb.append(in.next());
