@@ -58,7 +58,7 @@ public class ReadPdfAndLookupInDictionary {
         for (LookupWordsTO lookupWordsTO : lookupWordsTOList) {
             logger.debug(lookupWordsTO.toString());
             int lookupWordList = lookupWordsTO.getWordList().size();
-            logger.debug("LookupWordlist size: "+ lookupWordList);
+            //logger.debug("LookupWordlist size: "+ lookupWordList);
 
             int countWordMatches = countMatch(lookupWordsTO.getWordList(), pdfWordList);
             logger.debug("Words matching: " +countWordMatches);

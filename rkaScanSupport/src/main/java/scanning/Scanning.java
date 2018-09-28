@@ -24,7 +24,7 @@ public class Scanning {
         for (LookupWordsTO lookupWordsTO : lookupWordsList) {
          // logger.debug(lookupWordsTO.toString());
             int lookupWordList = lookupWordsTO.getWordList().size();
-            logger.debug("LookupWordlist size: "+ lookupWordList);
+            //logger.debug("LookupWordlist size: "+ lookupWordList);
             int countWordMatches = countMatch(lookupWordsTO.getWordList(), pdfWordList);
             logger.debug("Words matching: " +countWordMatches);
             if (lookupWordList == countWordMatches) {
@@ -37,12 +37,7 @@ public class Scanning {
     }
 
     public String getFileNamePartByDateLookup(String pdfText) {
-        try {
-            return getRelevantDateFromString(pdfText);
-        } catch (Exception e) {
-           // e.printStackTrace();
-            return "XXXX_XX_XX";
-        }
+        return getRelevantDateFromString(pdfText);
     }
 
     private static int countMatch(List<String> list1,List<String> list2) {
