@@ -26,7 +26,7 @@ public class Scanning {
             int lookupWordList = lookupWordsTO.getWordList().size();
             //logger.debug("LookupWordlist size: "+ lookupWordList);
             int countWordMatches = countMatch(lookupWordsTO.getWordList(), pdfWordList);
-            logger.debug("Words matching: " +countWordMatches);
+            //logger.debug("Words matching: " +countWordMatches);
             if (lookupWordList == countWordMatches) {
                 logger.debug("--> Full Match!");
                 return lookupWordsTO.getzielKategorie()+"_"+lookupWordsTO.getzielName();
@@ -54,8 +54,11 @@ public class Scanning {
         List<LocalDate> dates = new ArrayList<>();
         for (String element : elements) {
             try {
+                logger.debug(element);
+                element = cleanElementForDateRecon(element);
                 LocalDate ld = LocalDate.parse(element, f);
                 dates.add(ld);
+                logger.debug(String.valueOf(ld));
             } catch (DateTimeParseException e) {
                 // Ignore the exception. Move on to next element.
             }
@@ -80,6 +83,14 @@ public class Scanning {
         } else {
             return null;
         }
+    }
+
+    public String cleanElementForDateRecon(String element) {
+        //26.07.2018-31
+        if (element.contains(".2018-")) {
+            return element.substring(0,element.indexOf(".2018-")+5);
+        }
+        return element;
     }
 
     public void renameFile(String oldNameAndPath, String newNameAndPath) {

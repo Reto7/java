@@ -37,7 +37,10 @@ public class PdfDatei {
                     stripper.setSortByPosition(true);
                     PDFTextStripper tStripper = new PDFTextStripper();
                     pdfFileTextInhalt = tStripper.getText(document);
-                    //logger.debug("Text:" + st);
+                    //clean
+                    if (pdfFileTextInhalt.contains("\t")) {
+                        pdfFileTextInhalt = pdfFileTextInhalt.replace("\t", " ");
+                    }
                     document.close();
                 }
             }

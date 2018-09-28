@@ -22,13 +22,15 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-//      String filename = "H:\\Dropbox\\___temp_SCAN\\Ohne Titel_b.pdf";  // TODO LOOP, alles ohne *_PDF.pdf
-//      String filename = "/home/rk/Dropbox/___temp_SCAN/Ohne Titel_b.pdf";  // TODO LOOP, alles ohne *_PDF.pdf
+//      String filename = "H:\\Dropbox\\___temp_SCAN\\Ohne Titel_b.pdf";
+//      String filename = "/home/rk/Dropbox/___temp_SCAN/Ohne Titel_b.pdf";
 
         File[] files = new File("/home/rk/Dropbox/___temp_SCAN/").listFiles();
         for (File file : files) {
             if (file.isDirectory()) {
                 logger.debug("Directory: " + file.getName());
+            } else if (file.getName().endsWith("_PDF.pdf")) {
+                //  alles mit *_PDF.pdf nicht nochmals behandeln
             } else {
                 System.out.println("File: " + file.getName());
                 bearbeiteDatei(file); // Calls same method again.
@@ -56,8 +58,6 @@ public class Main {
         try {
             newFileNamePartByWordLookupMatch = s.getFileNamePartByWordLookupMatch(pdfDatei.getWortListe(), LOOKUP_WORDS_LIST);
             logger.info("newFileNamePartByWordLookupMatch: " +newFileNamePartByWordLookupMatch);
-
-
         } catch (NoMatchingLookupWordsException e) {
             logger.info("newFileNamePartByWordLookupMatch No Matchup");
         }
