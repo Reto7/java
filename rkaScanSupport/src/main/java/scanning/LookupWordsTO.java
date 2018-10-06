@@ -61,15 +61,43 @@ public class LookupWordsTO {
         return w4;
     }
 
+    public void setZielKategorie(String zielKategorie) {
+        this.zielKategorie = zielKategorie;
+    }
+
+    public void setZielName(String zielName) {
+        this.zielName = zielName;
+    }
+
+    public void setW1(String w1) {
+        this.w1 = w1;
+    }
+
+    public void setW2(String w2) {
+        this.w2 = w2;
+    }
+
+    public void setW3(String w3) {
+        this.w3 = w3;
+    }
+
+    public void setW4(String w4) {
+        this.w4 = w4;
+    }
+
     public List<String> getWordList(){
         List<String> wordList = new ArrayList<>();
-        if (w1.length() >1)
+        if (w1 != null)
+            if (w1.length() >1)
             wordList.add(w1);
-        if (w2.length() >1)
+        if (w2 != null)
+            if (w2.length() >1)
             wordList.add(w2);
-        if (w3.length() >1)
+        if (w3 != null)
+            if (w3.length() >1)
             wordList.add(w3);
-        if (w4.length() >1)
+        if (w4 != null)
+            if (w4.length() >1)
             wordList.add(w4);
         return wordList;
     }

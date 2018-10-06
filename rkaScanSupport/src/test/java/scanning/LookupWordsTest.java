@@ -16,7 +16,7 @@ public class LookupWordsTest {
 
     @Test
     public void testJsonToJavaBeanConvertionShouldCreateInstances(){
-        List<LookupWordsTO> lookupWordsTOList = LookupWords.buildFromFile();
+        List<LookupWordsTO> lookupWordsTOList = LookupWords.buildWordList();
         Integer numberOfTestDataObjects = lookupWordsTOList.size();
         logger.debug("Unit Testing the Tests: Number of Testdata: " +numberOfTestDataObjects);
         Assert.assertTrue(numberOfTestDataObjects > 2);

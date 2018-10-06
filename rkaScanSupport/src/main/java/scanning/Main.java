@@ -17,7 +17,7 @@ public class Main {
 
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
-    public static final List<LookupWordsTO> LOOKUP_WORDS_LIST = LookupWords.buildFromFile();
+    public static final List<LookupWordsTO> LOOKUP_WORDS_LIST = LookupWords.buildWordList();
 
 
     public static void main(String[] args) throws IOException {
@@ -25,21 +25,28 @@ public class Main {
 //      String filename = "H:\\Dropbox\\___temp_SCAN\\Ohne Titel_b.pdf";
 //      String filename = "/home/rk/Dropbox/___temp_SCAN/Ohne Titel_b.pdf";
 
-        File[] files = new File("/home/rk/Dropbox/___temp_SCAN/").listFiles();
+//      File[] files = new File("/home/rk/Dropbox/___temp_SCAN/").listFiles();
+        File[] files = new File("H:\\Dropbox\\___temp_SCAN").listFiles();
+        logger.info("Anzahl Files: " +files.length);
         for (File file : files) {
             if (file.isDirectory()) {
                 logger.debug("Directory: " + file.getName());
             } else if (file.getName().endsWith("_PDF.pdf")) {
                 //  alles mit *_PDF.pdf nicht nochmals behandeln
+            } else if (file.getName().startsWith("2017")) {
+            } else if (file.getName().startsWith("2018")) {
+            } else if (file.getName().startsWith("2019")) {
+            } else if (file.getName().startsWith("2020")) {
+            } else if (file.getName().startsWith("2021")) {
+            } else if (file.getName().startsWith("2022")) {
+            } else if (file.getName().startsWith("2023")) {
             } else {
-                System.out.println("File: " + file.getName());
-                bearbeiteDatei(file); // Calls same method again.
+                logger.info("--------------------------------------------------------");
+                logger.info("File: " + file.getName());
+                logger.info("--------------------------------------------------------");
+                bearbeiteDatei(file);
             }
         }
-
-
-
-
     }
 
     private static void bearbeiteDatei(File file) throws IOException {
@@ -69,17 +76,15 @@ public class Main {
             //*******************************
             String random = UUID.randomUUID().toString().substring(1,8);
             String newFilename = newFileNamePartByDate + "_" + newFileNamePartByWordLookupMatch + "_" +random +"_PDF.pdf";
-            logger.info("-------------------------------------");
             logger.info("NEW FILENAME: " + newFilename);
-            logger.info("-------------------------------------");
+            logger.info("OLD FILENAME: " + file.getName());
             String path = file.getParent(); //new File(filename).getParent();
-            System.out.println("path " + path);
-            System.out.println("datei " + file.getAbsolutePath());
+          //System.out.println("path " + path);
+          //System.out.println("datei " + file.getAbsolutePath());
             s.renameFile(file.getAbsolutePath(),path+"/"+newFilename); // TODO
         } else {
-            logger.info("-------------------------------------");
+            logger.info("NEW FILENAME: " + file.getName());
             logger.info("OLD FILENAME: " + file.getName());
-            logger.info("-------------------------------------");
         }
     }
 

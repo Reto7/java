@@ -54,7 +54,7 @@ public class Scanning {
         List<LocalDate> dates = new ArrayList<>();
         for (String element : elements) {
             try {
-                logger.debug(element);
+                //logger.debug(element);
                 element = cleanElementForDateRecon(element);
                 LocalDate ld = LocalDate.parse(element, f);
                 dates.add(ld);
