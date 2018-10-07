@@ -24,9 +24,9 @@ public class Scanning {
         for (LookupWordsTO lookupWordsTO : lookupWordsList) {
          // logger.debug(lookupWordsTO.toString());
             int lookupWordList = lookupWordsTO.getWordList().size();
-            //logger.debug("LookupWordlist size: "+ lookupWordList);
+          //logger.debug("LookupWordlist size: "+ lookupWordList);
             int countWordMatches = countMatch(lookupWordsTO.getWordList(), pdfWordList);
-            //logger.debug("Words matching: " +countWordMatches);
+          //logger.debug("Words matching: " +countWordMatches);
             if (lookupWordList == countWordMatches) {
                 logger.debug("--> Full Match!");
                 return lookupWordsTO.getzielKategorie()+"_"+lookupWordsTO.getzielName();

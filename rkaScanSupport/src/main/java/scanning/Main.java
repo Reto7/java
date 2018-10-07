@@ -8,8 +8,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.UUID;
 
@@ -18,15 +21,17 @@ public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static final List<LookupWordsTO> LOOKUP_WORDS_LIST = LookupWords.buildWordList();
-
+    public static final String PDF_FILES_DIRECTORY = "H:\\DATEN\\Rechnungen\\Belege\\GEMISCHT2";
 
     public static void main(String[] args) throws IOException {
 
-//      String filename = "H:\\Dropbox\\___temp_SCAN\\Ohne Titel_b.pdf";
-//      String filename = "/home/rk/Dropbox/___temp_SCAN/Ohne Titel_b.pdf";
+        java.util.logging.Logger.getLogger("org.apache.pdfbox")
+                .setLevel(java.util.logging.Level.OFF);
+        java.util.logging.Logger.getLogger("org.apache.fontbox")
+                .setLevel(java.util.logging.Level.OFF);
 
-//      File[] files = new File("/home/rk/Dropbox/___temp_SCAN/").listFiles();
-        File[] files = new File("H:\\Dropbox\\___temp_SCAN").listFiles();
+
+        File[] files = new File(PDF_FILES_DIRECTORY).listFiles();
         logger.info("Anzahl Files: " +files.length);
         for (File file : files) {
             if (file.isDirectory()) {
@@ -50,8 +55,9 @@ public class Main {
     }
 
     private static void bearbeiteDatei(File file) throws IOException {
-        logger.debug("File: " + file.getAbsolutePath());
-        PdfDatei pdfDatei = new PdfDatei(file.getAbsolutePath());
+      //logger.debug("File: " + file.getAbsolutePath());
+
+        PdfDatei pdfDatei = new PdfDatei(file.getAbsolutePath());  // hier werden die PDF Worte ermittelt
         Scanning s = new Scanning();
 
         String newFileNamePartByDate = null;
@@ -92,17 +98,31 @@ public class Main {
         logger.info("");
         // kein datum im text gefunden
         // verwenden creation date des files
+//        BasicFileAttributes attr = null;
+//        try {
+//            Path p = Paths.get(file.getPath());
+//            BasicFileAttributes view
+//                    = Files.getFileAttributeView(p, BasicFileAttributeView.class)
+//                    .readAttributes();
+//            logger.debug("File creation date: " +String.valueOf(attr.creationTime()));
+//            return String.valueOf(attr.creationTime());
+//        } catch (IOException | NullPointerException e) {
+//        }
+
+        Path path = Paths.get(file.getPath());
         BasicFileAttributes attr = null;
         try {
-            Path p = Paths.get(file.getPath());
-            BasicFileAttributes view
-                    = Files.getFileAttributeView(p, BasicFileAttributeView.class)
-                    .readAttributes();
-            logger.debug("File creation date: " +String.valueOf(attr.creationTime()));
-            return String.valueOf(attr.creationTime());
-        } catch (IOException | NullPointerException e) {
+            attr = Files.readAttributes(path, BasicFileAttributes.class);
+            System.out.println("**************** creationTime: " + attr.creationTime());
+            long cTime = attr.creationTime().toMillis();
+            ZonedDateTime t = Instant.ofEpochMilli(cTime).atZone(ZoneId.of("UTC"));
+            String dateCreated = DateTimeFormatter.ofPattern("yyyy_MM_dd").format(t).replace(":","");
+            System.out.println("**************** :" +dateCreated);
+            return dateCreated;
+        } catch (IOException e) {
+            System.out.println("oops error! " + e.getMessage());
+            return "__error_date__";
         }
-        return null;
     }
 
 }

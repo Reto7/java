@@ -6,6 +6,12 @@
         </Console>
     </Appenders>
     <Loggers>
+        <Logger name="org.apache.pdfbox" level="ERROR">
+            <AppenderRef ref="org.apache.pdfbox" level="ERROR"/>
+        </Logger>
+        <Logger name="org.apache.fontbox" level="ERROR">
+            <AppenderRef ref="org.apache.fontbox" level="ERROR"/>
+        </Logger>
         <Logger name="scanning" level="debug">
             <AppenderRef ref="Console" level="debug"/>
         </Logger>

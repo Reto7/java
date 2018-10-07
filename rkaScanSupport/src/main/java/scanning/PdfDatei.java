@@ -27,7 +27,7 @@ public class PdfDatei {
     }
 
     public String getPdfText() throws IOException {
-        logger.info("");
+      //logger.info("");
         if (this.pdfTextInhalt == null) {
             String pdfFileTextInhalt = "";
             try (PDDocument document = PDDocument.load(new File(this.pdfFileName))) {
@@ -50,11 +50,11 @@ public class PdfDatei {
     }
 
     public List<String> getWortListe() throws IOException {
-        logger.info("");
+      //logger.info("");
         List<String> pdfWordListAlle = new ArrayList<String>();
         String pdfFileInText = this.pdfTextInhalt;
         splitTextIntoWordList(pdfWordListAlle, pdfFileInText);
-        logger.debug("PDF Datei Wortliste: " +pdfWordListAlle.size());
+      //logger.debug("PDF Datei Wortliste: " +pdfWordListAlle.size());
         return pdfWordListAlle;
     }
 

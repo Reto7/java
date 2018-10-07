@@ -7,15 +7,17 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class LookupWords {
 
     private static final Logger logger = LoggerFactory.getLogger(LookupWords.class);
-    public static final String SAMPLE_XLSX_FILE_PATH = "H:\\Dropbox\\Scan_Source\\LookupWords.xlsx";
-
+    public static final String WORDLIST_SRC_DIR = "H:\\Dropbox\\Scan_Source\\";
+    public static final String WORDLIST_SRC_FILENAME = "LookupWords.xlsx";
+    public static final String WORDLIST_SRC_EXCEL_FILE = WORDLIST_SRC_DIR+WORDLIST_SRC_FILENAME;
+    public static final String WORDLIST_WORKING_EXCEL_FILENAME = WORDLIST_SRC_DIR +"wordlist_working_copy.xlsx";
 
     public static List<LookupWordsTO> buildWordList() {
         try {
@@ -30,12 +32,21 @@ public class LookupWords {
 
     private static List<LookupWordsTO> readExcelCreateWordList() throws IOException, InvalidFormatException  {
 
+        // kopieren Wordlist Excel auf working-copy, damit das normale Excel offen gelassen werden kann
+        File dirFrom = new File(WORDLIST_SRC_EXCEL_FILE);
+        File dirTo = new File(WORDLIST_WORKING_EXCEL_FILENAME);
+        try {
+            copyFile(dirFrom, dirTo);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
         List<LookupWordsTO> lookupWordsTOList = new ArrayList<>();
         LookupWordsTO lookupWordsTO;
 
         logger.info("");
         // Creating a Workbook from an Excel file (.xls or .xlsx)
-        Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
+        Workbook workbook = WorkbookFactory.create(dirTo);
         // Retrieving the number of sheets in the Workbook
         System.out.println("Workbook has " + workbook.getNumberOfSheets() + " Sheets : ");
         /*
@@ -107,6 +118,11 @@ public class LookupWords {
             e.printStackTrace();
         }
         return null; // TODO
+    }
+
+    public static void copyFile( File from, File to ) throws IOException {
+        Files.delete(to.toPath());
+        Files.copy( from.toPath(), to.toPath() );
     }
 
 }
