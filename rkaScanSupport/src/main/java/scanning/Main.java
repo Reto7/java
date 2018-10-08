@@ -13,58 +13,100 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
 public class Main {
 
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
+    public static final String PDF_FILES_DIRECTORY = "H:\\DATEN\\Rechnungen\\Belege\\GEMISCHT2";
 
-    public static final List<LookupWordsTO> LOOKUP_WORDS_LIST = LookupWords.buildWordList();
-    public static final String PDF_FILES_DIRECTORY = "H:\\DATEN\\Rechnungen\\Belege\\GEMISCHT";
+    public static List<LookupWordsTO> lookupWordsTOList = LookupWords.buildWordList();
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         java.util.logging.Logger.getLogger("org.apache.pdfbox")
                 .setLevel(java.util.logging.Level.OFF);
         java.util.logging.Logger.getLogger("org.apache.fontbox")
                 .setLevel(java.util.logging.Level.OFF);
 
+        int counter = 0;
 
-        File[] files = new File(PDF_FILES_DIRECTORY).listFiles();
-        logger.info("Anzahl Files: " +files.length);
-        for (File file : files) {
-            if (file.isDirectory()) {
-                logger.debug("Directory: " + file.getName());
-            } else if (file.getName().endsWith("_PDF.pdf")) {
-                //  alles mit *_PDF.pdf nicht nochmals behandeln
-            } else if (file.getName().startsWith("2005")) {
-            } else if (file.getName().startsWith("2006")) {
-            } else if (file.getName().startsWith("2007")) {
-            } else if (file.getName().startsWith("2008")) {
-            } else if (file.getName().startsWith("2009")) {
-            } else if (file.getName().startsWith("2010")) {
-            } else if (file.getName().startsWith("2011")) {
-            } else if (file.getName().startsWith("2012")) {
-            } else if (file.getName().startsWith("2013")) {
-            } else if (file.getName().startsWith("2014")) {
-            } else if (file.getName().startsWith("2015")) {
-            } else if (file.getName().startsWith("2016")) {
-            } else if (file.getName().startsWith("2017")) {
-            } else if (file.getName().startsWith("2018")) {
-            } else if (file.getName().startsWith("2019")) {
-            } else if (file.getName().startsWith("2020")) {
-            } else if (file.getName().startsWith("2021")) {
-            } else if (file.getName().startsWith("2022")) {
-            } else if (file.getName().startsWith("2023")) {
-            } else {
-                logger.info("--------------------------------------------------------");
-                logger.info("File: " + file.getName());
-                logger.info("--------------------------------------------------------");
-                bearbeiteDatei(file);
+        // Win Explorer
+        Runtime.getRuntime().exec("explorer.exe /select," + PDF_FILES_DIRECTORY);
+
+        // Endless Loop, Wait 1 Sec
+        for (;;) {
+            try {
+                long startTime = getStartTime();
+
+//            //reload lookupExcel?
+//            Date excelLookupFileLASTMODIFIED = new Date(new File(Const.WORDLIST_SRC_EXCEL_FILE).lastModified());
+//            System.out.println("--- last mod ---" + excelLookupFileLASTMODIFIED);
+//            long secondsSeitLetzterExcelAenderung = (excelLookupFileLASTMODIFIED.getTime() -  new Date().getTime())/1000;
+//            System.out.println("--- since secs ---" + secondsSeitLetzterExcelAenderung);
+//            if (secondsSeitLetzterExcelAenderung < 5) {
+//                System.out.println("--- RELOAD EXCEL! ---");
+//                lookupWordsTOList = LookupWords.buildWordList();
+//            }
+
+                // START
+                File[] files = new File(PDF_FILES_DIRECTORY).listFiles();
+                logger.info("Anzahl Files: " + files.length);
+                for (File file : files) {
+                    if (file.isDirectory()) {
+                        //null //logger.debug("Directory: " + file.getName());
+                    } else if (file.getName().endsWith("_PDF.pdf")) {
+                        //null
+                    } else if (file.getName().startsWith("19")) {  //1988
+                        //null
+                    } else if (file.getName().startsWith("20")) {  //2018
+                        //null
+                    } else {
+                        logger.info("--------------------------------------------------------");
+                        logger.info("File: " + file.getName());
+                        logger.info("--------------------------------------------------------");
+                        bearbeiteDatei(file);
+                    }
+                }
+                long endTime = getEndTime();
+                long runningTime = getRunnedTimeInMillisec(startTime,endTime);
+                System.out.println("********************************************** running time: " + runningTime +" *****************************");
+                if (runningTime < 2000) {
+                    Thread.sleep(2000);
+                    //
+                    counter++;
+                    if (counter==5) {
+                        lookupWordsTOList = LookupWords.buildWordList();
+                        counter=0;
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                //restart
             }
         }
     }
+
+    private static long getEndTime() {
+        long endTime = System.nanoTime();
+        return endTime;
+    }
+
+    private static long getStartTime() {
+        long startTime = System.nanoTime();
+        return startTime;
+    }
+
+    private static long getRunnedTimeInMillisec(long startTime, long endTime) {
+        long duration = (endTime - startTime);
+        return duration / 1000000; //divide by 1000000 to get milliseconds.
+    }
+
 
     private static void bearbeiteDatei(File file) throws IOException {
       //logger.debug("File: " + file.getAbsolutePath());
@@ -81,7 +123,7 @@ public class Main {
 
         String newFileNamePartByWordLookupMatch = null;
         try {
-            newFileNamePartByWordLookupMatch = s.getFileNamePartByWordLookupMatch(pdfDatei.getWortListe(), LOOKUP_WORDS_LIST);
+            newFileNamePartByWordLookupMatch = s.getFileNamePartByWordLookupMatch(pdfDatei.getWortListe(), lookupWordsTOList);
             logger.info("newFileNamePartByWordLookupMatch: " +newFileNamePartByWordLookupMatch);
         } catch (NoMatchingLookupWordsException e) {
             logger.info("newFileNamePartByWordLookupMatch No Matchup");
@@ -110,17 +152,6 @@ public class Main {
         logger.info("");
         // kein datum im text gefunden
         // verwenden creation date des files
-//        BasicFileAttributes attr = null;
-//        try {
-//            Path p = Paths.get(file.getPath());
-//            BasicFileAttributes view
-//                    = Files.getFileAttributeView(p, BasicFileAttributeView.class)
-//                    .readAttributes();
-//            logger.debug("File creation date: " +String.valueOf(attr.creationTime()));
-//            return String.valueOf(attr.creationTime());
-//        } catch (IOException | NullPointerException e) {
-//        }
-
         Path path = Paths.get(file.getPath());
         BasicFileAttributes attr = null;
         try {
@@ -136,5 +167,19 @@ public class Main {
             return "__error_date__";
         }
     }
+
+
+//    private boolean isExcelLookupFileUpdated( File file ) {
+//        file = file;
+//        timeStamp = file.lastModified();
+//
+//        if( timeStamp != timeStamp ) {
+//            timeStamp = timeStamp;
+//            //Yes, file is updated
+//            return true;
+//        }
+//        //No, file is not updated
+//        return false;
+//    }
 
 }
