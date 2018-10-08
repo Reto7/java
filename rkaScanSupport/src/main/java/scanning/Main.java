@@ -21,7 +21,7 @@ public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static final List<LookupWordsTO> LOOKUP_WORDS_LIST = LookupWords.buildWordList();
-    public static final String PDF_FILES_DIRECTORY = "H:\\DATEN\\Rechnungen\\Belege\\GEMISCHT2";
+    public static final String PDF_FILES_DIRECTORY = "H:\\DATEN\\Rechnungen\\Belege\\GEMISCHT";
 
     public static void main(String[] args) throws IOException {
 
@@ -38,6 +38,18 @@ public class Main {
                 logger.debug("Directory: " + file.getName());
             } else if (file.getName().endsWith("_PDF.pdf")) {
                 //  alles mit *_PDF.pdf nicht nochmals behandeln
+            } else if (file.getName().startsWith("2005")) {
+            } else if (file.getName().startsWith("2006")) {
+            } else if (file.getName().startsWith("2007")) {
+            } else if (file.getName().startsWith("2008")) {
+            } else if (file.getName().startsWith("2009")) {
+            } else if (file.getName().startsWith("2010")) {
+            } else if (file.getName().startsWith("2011")) {
+            } else if (file.getName().startsWith("2012")) {
+            } else if (file.getName().startsWith("2013")) {
+            } else if (file.getName().startsWith("2014")) {
+            } else if (file.getName().startsWith("2015")) {
+            } else if (file.getName().startsWith("2016")) {
             } else if (file.getName().startsWith("2017")) {
             } else if (file.getName().startsWith("2018")) {
             } else if (file.getName().startsWith("2019")) {
