@@ -84,8 +84,10 @@ public class Main {
                 }
             } catch (IOException e) {
                 e.printStackTrace();
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                Thread.sleep(1000);
             } finally {
                 //restart
             }
