@@ -34,7 +34,7 @@ public class Main {
         int counter = 0;
 
         // Win Explorer
-        Runtime.getRuntime().exec("explorer.exe /select," + PDF_FILES_DIRECTORY);
+        Runtime.getRuntime().exec("explorer.exe /open," + PDF_FILES_DIRECTORY);
 
         // Endless Loop, Wait 1 Sec
         for (;;) {
@@ -58,12 +58,10 @@ public class Main {
                     if (file.isDirectory()) {
                         //null //logger.debug("Directory: " + file.getName());
                     } else if (file.getName().endsWith("_PDF.pdf")) {
-                        //null
                     } else if (file.getName().startsWith("19")) {  //1988
-                        //null
                     } else if (file.getName().startsWith("20")) {  //2018
-                        //null
-                    } else {
+
+                    } else if (file.getName().endsWith(".pdf")) {
                         logger.info("--------------------------------------------------------");
                         logger.info("File: " + file.getName());
                         logger.info("--------------------------------------------------------");

@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -102,24 +103,28 @@ public class LookupWords {
     }
 
 
-    public List<LookupWordsTO> getAllData(){
-        logger.info("");
-        try {
-            List<LookupWordsTO> LookupWordsTOList = readExcelCreateWordList();
-            for (LookupWordsTO LookupWordsTO : LookupWordsTOList){
-                LookupWordsTO.validate();
-            }
-            return LookupWordsTOList;
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InvalidFormatException e) {
-            e.printStackTrace();
-        }
-        return null; // TODO
-    }
+//    public List<LookupWordsTO> getAllData(){
+//        logger.info("");
+//        try {
+//            List<LookupWordsTO> LookupWordsTOList = readExcelCreateWordList();
+//            for (LookupWordsTO LookupWordsTO : LookupWordsTOList){
+//                LookupWordsTO.validate();
+//            }
+//            return LookupWordsTOList;
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (InvalidFormatException e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 
     public static void copyFile( File from, File to ) throws IOException {
-        Files.delete(to.toPath());
+        try {
+            Files.delete(to.toPath());
+        } catch (NoSuchFileException e) {
+           // nicht vorhanden
+        }
         Files.copy( from.toPath(), to.toPath() );
     }
 
